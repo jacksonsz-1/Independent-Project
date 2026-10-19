@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Independent Project"
+config/name="Indeoendent Project"
 run/main_scene="res://scenes/start.tscn"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
 
 [display]
