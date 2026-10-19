@@ -1,39 +1,39 @@
 [gd_scene format=3 uid="uid://gnewxi4wdblx"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ewcy1"]
-sky_top_color = Color(0.5223595, 0.7441201, 0.9522554, 1)
-sky_horizon_color = Color(0.9918292, 1.1020384, 1.0876182, 1)
-ground_bottom_color = Color(0.12944353, 0.34851995, 0.0827036, 1)
-ground_horizon_color = Color(0.9918292, 1.1020384, 1.0876182, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4rvc"]
+size = Vector2(728.125, 21)
 
-[sub_resource type="Sky" id="Sky_jaeev"]
-sky_material = SubResource("ProceduralSkyMaterial_ewcy1")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewcy1"]
+radius = 22.0
+height = 78.0
 
-[sub_resource type="Environment" id="Environment_u80x2"]
-background_mode = 2
-sky = SubResource("Sky_jaeev")
-glow_enabled = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_renmy"]
+size = Vector2(346.5, 33)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k4rvc"]
+[node name="Node2D" type="Node2D" unique_id=743133876]
 
-[node name="Node3D" type="Node3D" unique_id=324354853]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=895286727]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=624228528]
-environment = SubResource("Environment_u80x2")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=751868258]
+position = Vector2(532, 1210)
+shape = SubResource("RectangleShape2D_k4rvc")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2103287524]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1654178308]
+position = Vector2(1712, 1210)
+shape = SubResource("RectangleShape2D_k4rvc")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=582781690]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-size = Vector3(10, 1, 10)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=870461651]
 
-[node name="Camera3D" type="Camera3D" parent="CSGBox3D" unique_id=416426440]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3613367, 3.0510697, 10.931484)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2143300742]
+position = Vector2(457, 512)
+shape = SubResource("CapsuleShape2D_ewcy1")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1958108522]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=891527046]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1937052509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.24438, 0)
-shape = SubResource("CapsuleShape3D_k4rvc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=863827558]
+position = Vector2(1148, 320)
+shape = SubResource("RectangleShape2D_renmy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
+position = Vector2(1149, 645)
+zoom = Vector2(0.5, 0.5)
