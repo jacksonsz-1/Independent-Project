@@ -4,6 +4,17 @@
 radius = 22.0
 height = 78.0
 
+[sub_resource type="Gradient" id="Gradient_jaeev"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kdmts"]
+gradient = SubResource("Gradient_jaeev")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bodal"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_u80x2"]
+mesh = SubResource("CapsuleMesh_bodal")
+base_texture = SubResource("GradientTexture2D_kdmts")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ph7m5"]
 
 [sub_resource type="Gradient" id="Gradient_ewcy1"]
@@ -23,6 +34,11 @@ zoom = Vector2(0.3, 0.3)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2143300742]
 position = Vector2(457, 512)
 shape = SubResource("CapsuleShape2D_ewcy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D" unique_id=540147249]
+position = Vector2(-21.999992, -38.99999)
+scale = Vector2(43.999992, 76.999985)
+texture = SubResource("MeshTexture_u80x2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=456749353]
 
