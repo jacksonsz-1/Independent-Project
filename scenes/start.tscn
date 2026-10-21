@@ -10,7 +10,16 @@ height = 78.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_renmy"]
 size = Vector2(346.5, 33)
 
+[sub_resource type="Gradient" id="Gradient_ewcy1"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ewcy1"]
+gradient = SubResource("Gradient_ewcy1")
+
 [node name="Node2D" type="Node2D" unique_id=743133876]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
+position = Vector2(1149, 645)
+zoom = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=895286727]
 
@@ -34,6 +43,5 @@ shape = SubResource("CapsuleShape2D_ewcy1")
 position = Vector2(1148, 320)
 shape = SubResource("RectangleShape2D_renmy")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
-position = Vector2(1149, 645)
-zoom = Vector2(0.5, 0.5)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D" unique_id=1441155355]
+texture = SubResource("GradientTexture2D_ewcy1")
