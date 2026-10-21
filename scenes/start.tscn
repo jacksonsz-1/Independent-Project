@@ -1,19 +1,77 @@
 [gd_scene format=3 uid="uid://gnewxi4wdblx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewcy1"]
-radius = 22.0
-height = 78.0
+[ext_resource type="Texture2D" uid="uid://bhac5sa77fm8q" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_jaeev"]
+[ext_resource type="Texture2D" uid="uid://d37nvw2ld0ive" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle2.png" id="2_kdmts"]
+[ext_resource type="Texture2D" uid="uid://c0jopyuxq44xe" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle3.png" id="3_0auqf"]
+[ext_resource type="Texture2D" uid="uid://ba7itq53iidjs" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle4.png" id="4_y16t7"]
+[ext_resource type="Texture2D" uid="uid://c8wh3aiuvtx5m" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk1.png" id="5_r8uic"]
+[ext_resource type="Texture2D" uid="uid://fk5tuxlun3ax" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk2.png" id="6_x1pfr"]
+[ext_resource type="Texture2D" uid="uid://disn2muau1tw0" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk3.png" id="7_n0tym"]
+[ext_resource type="Texture2D" uid="uid://2w06ewr1wj3a" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk4.png" id="8_8jfef"]
+[ext_resource type="Texture2D" uid="uid://dtxlq6um044hh" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk5.png" id="9_qfvu4"]
+[ext_resource type="Texture2D" uid="uid://df7cfgtnhbnht" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk6.png" id="10_twuju"]
+[ext_resource type="Texture2D" uid="uid://dckur1l2f0gvf" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk7.png" id="11_aox1m"]
+[ext_resource type="Texture2D" uid="uid://ur81yqvlq8ne" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk8.png" id="12_hp05y"]
+[ext_resource type="Texture2D" uid="uid://pghaw03b4ihg" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk9.png" id="13_g3i1d"]
+[ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
 
-[sub_resource type="Gradient" id="Gradient_jaeev"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jaeev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kdmts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0auqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y16t7")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r8uic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x1pfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n0tym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8jfef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qfvu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_twuju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aox1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hp05y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g3i1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cdrmf")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kdmts"]
-gradient = SubResource("Gradient_jaeev")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_bodal"]
-
-[sub_resource type="MeshTexture" id="MeshTexture_u80x2"]
-mesh = SubResource("CapsuleMesh_bodal")
-base_texture = SubResource("GradientTexture2D_kdmts")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctkvv"]
+size = Vector2(34, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ph7m5"]
 
@@ -31,14 +89,15 @@ zoom = Vector2(0.3, 0.3)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=870461651]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2143300742]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2031107873]
 position = Vector2(457, 512)
-shape = SubResource("CapsuleShape2D_ewcy1")
+sprite_frames = SubResource("SpriteFrames_ctkvv")
+animation = &"idle"
+frame_progress = 0.6161593
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D" unique_id=540147249]
-position = Vector2(-21.999992, -38.99999)
-scale = Vector2(43.999992, 76.999985)
-texture = SubResource("MeshTexture_u80x2")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=595809375]
+position = Vector2(454, 520)
+shape = SubResource("RectangleShape2D_ctkvv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=456749353]
 
