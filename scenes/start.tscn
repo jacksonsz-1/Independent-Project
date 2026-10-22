@@ -24,6 +24,22 @@
 [ext_resource type="Texture2D" uid="uid://pghaw03b4ihg" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk9.png" id="13_g3i1d"]
 [ext_resource type="Texture2D" uid="uid://brbypsay7kl5h" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Punch/punch3.png" id="13_gxmfj"]
 [ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
+[ext_resource type="Script" uid="uid://bakb0w7ens4ia" path="res://scenes/player_2.gd" id="25_1bd0r"]
+[ext_resource type="Texture2D" uid="uid://dmyda164up43g" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt1.png" id="26_xam4k"]
+[ext_resource type="Texture2D" uid="uid://hnunh7t3dif0" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt2.png" id="27_yoxka"]
+[ext_resource type="Texture2D" uid="uid://d0lotsu2cr2i0" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt3.png" id="28_xekfo"]
+[ext_resource type="Texture2D" uid="uid://b3v1tokjn2pol" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt4.png" id="29_ypgks"]
+[ext_resource type="Texture2D" uid="uid://cwrhem453uchd" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle1.png" id="30_cs3pn"]
+[ext_resource type="Texture2D" uid="uid://bugcj6c70tpkp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle2.png" id="31_ycbhe"]
+[ext_resource type="Texture2D" uid="uid://gvyf5w6mo5qk" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle3.png" id="32_5xbah"]
+[ext_resource type="Texture2D" uid="uid://bs1k8v5xr2gxg" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle4.png" id="33_pxum8"]
+[ext_resource type="Texture2D" uid="uid://bjft7q3d50x0f" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch1.png" id="34_vdf25"]
+[ext_resource type="Texture2D" uid="uid://d10gvimb0ci65" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch2.png" id="35_0v776"]
+[ext_resource type="Texture2D" uid="uid://cl8csjijksr5w" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch3.png" id="36_k41c7"]
+[ext_resource type="Texture2D" uid="uid://bvjf637uk7pwy" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk1.png" id="37_i5q5x"]
+[ext_resource type="Texture2D" uid="uid://d1b0itwt1yxv5" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk2.png" id="38_q1j5q"]
+[ext_resource type="Texture2D" uid="uid://ciqrbbv21jpcp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk3.png" id="39_wqbfb"]
+[ext_resource type="Texture2D" uid="uid://df0vpyytg17bj" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk4.png" id="40_mat1i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
 animations = [{
@@ -134,6 +150,77 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_renmy"]
 gradient = SubResource("Gradient_ewcy1")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_18u8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_xam4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yoxka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_xekfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ypgks")
+}],
+"loop": 1,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_cs3pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ycbhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_5xbah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_pxum8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_vdf25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0v776")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_k41c7")
+}],
+"loop": 1,
+"name": &"punch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_i5q5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_q1j5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_wqbfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_mat1i")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtpuq"]
+size = Vector2(28, 43)
+
 [node name="Node2D" type="Node2D" unique_id=743133876]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
@@ -146,8 +233,7 @@ script = ExtResource("1_b1pjr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player1" unique_id=2031107873]
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"walk"
-frame_progress = 0.69048375
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=595809375]
 position = Vector2(454, 520)
@@ -189,3 +275,15 @@ shape = SubResource("RectangleShape2D_ph7m5")
 position = Vector2(0.13043755, 2.3961067e-05)
 scale = Vector2(0.3220109, 0.37499985)
 texture = SubResource("GradientTexture2D_renmy")
+
+[node name="Player2" type="CharacterBody2D" parent="." unique_id=928902812]
+position = Vector2(587, -646)
+script = ExtResource("25_1bd0r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2" unique_id=697046885]
+sprite_frames = SubResource("SpriteFrames_18u8k")
+animation = &"hurt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2" unique_id=1203395953]
+position = Vector2(-4, 10.5)
+shape = SubResource("RectangleShape2D_wtpuq")
