@@ -85,7 +85,7 @@ gradient = SubResource("Gradient_ewcy1")
 [node name="Node2D" type="Node2D" unique_id=743133876]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.5, 0.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=870461651]
 
@@ -107,7 +107,7 @@ scale = Vector2(23, 1)
 shape = SubResource("RectangleShape2D_ph7m5")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=2109497427]
-position = Vector2(0.13043755, 2.3961067e-05)
+position = Vector2(0.34782353, -2.0000067)
 scale = Vector2(0.3220109, 0.37499985)
 texture = SubResource("GradientTexture2D_renmy")
 
