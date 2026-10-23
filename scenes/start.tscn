@@ -42,15 +42,6 @@
 [ext_resource type="Texture2D" uid="uid://ciqrbbv21jpcp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk3.png" id="39_wqbfb"]
 [ext_resource type="Texture2D" uid="uid://df0vpyytg17bj" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk4.png" id="40_mat1i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ph7m5"]
-
-[sub_resource type="Gradient" id="Gradient_ewcy1"]
-offsets = PackedFloat32Array(0.0065789474, 0.3881579, 0.8618421)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_renmy"]
-gradient = SubResource("Gradient_ewcy1")
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_18u8k"]
 animations = [{
 "frames": [{
@@ -222,6 +213,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctkvv"]
 size = Vector2(34, 53)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj354"]
+size = Vector2(14.92, 28)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ctkvv"]
+
 [node name="Node2D" type="Node2D" unique_id=743133876]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983888136]
@@ -232,45 +228,8 @@ texture = ExtResource("1_71xtm")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
 zoom = Vector2(1.3, 1.3)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=456749353]
-position = Vector2(-973, -606)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1717729350]
-position = Vector2(1124, 707)
-scale = Vector2(23, 1)
-shape = SubResource("RectangleShape2D_ph7m5")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=2109497427]
-position = Vector2(0.34782353, 0.49999648)
-scale = Vector2(0.3220109, 0.29687473)
-texture = SubResource("GradientTexture2D_renmy")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1000524027]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=658122753]
-position = Vector2(500, 1200)
-scale = Vector2(26, 1)
-shape = SubResource("RectangleShape2D_ph7m5")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D" unique_id=1323571454]
-position = Vector2(0.13043755, 2.3961067e-05)
-scale = Vector2(0.3220109, 0.37499985)
-texture = SubResource("GradientTexture2D_renmy")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1863669571]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=743148507]
-position = Vector2(1700, 1200)
-scale = Vector2(26, 1)
-shape = SubResource("RectangleShape2D_ph7m5")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D" unique_id=254511948]
-position = Vector2(0.13043755, 2.3961067e-05)
-scale = Vector2(0.3220109, 0.37499985)
-texture = SubResource("GradientTexture2D_renmy")
-
 [node name="Player2" type="CharacterBody2D" parent="." unique_id=928902812]
-position = Vector2(270, -18)
+position = Vector2(325, 104)
 script = ExtResource("25_1bd0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2" unique_id=697046885]
@@ -283,7 +242,7 @@ position = Vector2(-4, 7)
 shape = SubResource("RectangleShape2D_wtpuq")
 
 [node name="Player1" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(-281, -553)
+position = Vector2(-783, -412)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player1" unique_id=2031107873]
@@ -295,3 +254,16 @@ frame_progress = 0.57367027
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=595809375]
 position = Vector2(454, 520.5)
 shape = SubResource("RectangleShape2D_ctkvv")
+
+[node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
+position = Vector2(0, 151)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform" unique_id=1369956303]
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform" unique_id=388142278]
+scale = Vector2(750, 30)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
