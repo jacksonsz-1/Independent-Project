@@ -156,7 +156,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_728ow")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"jump",
 "speed": 7.0
 }, {
@@ -170,7 +170,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_gxmfj")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"punch",
 "speed": 7.0
 }, {
@@ -248,8 +248,7 @@ script = ExtResource("1_b1pjr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player1" unique_id=2031107873]
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"idle"
-frame_progress = 0.57367027
+animation = &"punch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=595809375]
 position = Vector2(454, 520.5)
