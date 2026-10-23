@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gnewxi4wdblx"]
 
-[ext_resource type="Texture2D" uid="uid://s4y84m6v7e8i" path="res://playersprites/Streets of Fight files/Assets/Stage Layers/back.png" id="1_71xtm"]
+[ext_resource type="Texture2D" uid="uid://dy84iqwmx84y" path="res://playersprites/images (3).jpeg" id="1_71xtm"]
 [ext_resource type="Script" uid="uid://daedpx7fiw5nf" path="res://scenes/player_1.gd" id="1_b1pjr"]
 [ext_resource type="Texture2D" uid="uid://djiet3je5ne6l" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Hurt/hurt1.png" id="1_cdrmf"]
 [ext_resource type="Texture2D" uid="uid://bhac5sa77fm8q" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_jaeev"]
@@ -25,93 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://pghaw03b4ihg" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk9.png" id="13_g3i1d"]
 [ext_resource type="Texture2D" uid="uid://brbypsay7kl5h" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Punch/punch3.png" id="13_gxmfj"]
 [ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
-[ext_resource type="Script" uid="uid://bakb0w7ens4ia" path="res://scenes/player_2.gd" id="25_1bd0r"]
-[ext_resource type="Texture2D" uid="uid://dmyda164up43g" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt1.png" id="26_xam4k"]
-[ext_resource type="Texture2D" uid="uid://hnunh7t3dif0" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt2.png" id="27_yoxka"]
-[ext_resource type="Texture2D" uid="uid://d0lotsu2cr2i0" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt3.png" id="28_xekfo"]
-[ext_resource type="Texture2D" uid="uid://b3v1tokjn2pol" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt4.png" id="29_ypgks"]
-[ext_resource type="Texture2D" uid="uid://cwrhem453uchd" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle1.png" id="30_cs3pn"]
-[ext_resource type="Texture2D" uid="uid://bugcj6c70tpkp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle2.png" id="31_ycbhe"]
-[ext_resource type="Texture2D" uid="uid://gvyf5w6mo5qk" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle3.png" id="32_5xbah"]
-[ext_resource type="Texture2D" uid="uid://bs1k8v5xr2gxg" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle4.png" id="33_pxum8"]
-[ext_resource type="Texture2D" uid="uid://bjft7q3d50x0f" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch1.png" id="34_vdf25"]
-[ext_resource type="Texture2D" uid="uid://d10gvimb0ci65" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch2.png" id="35_0v776"]
-[ext_resource type="Texture2D" uid="uid://cl8csjijksr5w" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch3.png" id="36_k41c7"]
-[ext_resource type="Texture2D" uid="uid://bvjf637uk7pwy" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk1.png" id="37_i5q5x"]
-[ext_resource type="Texture2D" uid="uid://d1b0itwt1yxv5" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk2.png" id="38_q1j5q"]
-[ext_resource type="Texture2D" uid="uid://ciqrbbv21jpcp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk3.png" id="39_wqbfb"]
-[ext_resource type="Texture2D" uid="uid://df0vpyytg17bj" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk4.png" id="40_mat1i"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_18u8k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_xam4k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_yoxka")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_xekfo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_ypgks")
-}],
-"loop": 1,
-"name": &"hurt",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("30_cs3pn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_ycbhe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_5xbah")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_pxum8")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("34_vdf25")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_0v776")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_k41c7")
-}],
-"loop": 1,
-"name": &"punch",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("37_i5q5x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_q1j5q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_wqbfb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_mat1i")
-}],
-"loop": 1,
-"name": &"walk",
-"speed": 8.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtpuq"]
-size = Vector2(28, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
 animations = [{
@@ -213,39 +126,75 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctkvv"]
 size = Vector2(34, 53)
 
+[sub_resource type="GDScript" id="GDScript_71xtm"]
+script/source = "extends CharacterBody2D
+@onready var animated_sprite = $AnimatedSprite2D
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -500.0
+
+
+func _physics_process(delta: float) -> void:
+	var direction := Input.get_axis(\"Left\", \"Right\")
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"Jump\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		animated_sprite.flip_h = (direction < 0)
+		animated_sprite.play(\"jump\")
+		
+	if animated_sprite.frame == 3 and is_on_floor():
+			animated_sprite.play(\"idle\")
+		
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	
+	if direction:
+		velocity.x = direction * SPEED
+		
+		if is_on_floor and not animated_sprite.animation == \"jump\":
+			animated_sprite.play(\"walk\")
+			animated_sprite.flip_h = (direction < 0)
+		
+		
+		
+		
+		
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if not Input.is_anything_pressed() and is_on_floor():
+			animated_sprite.play(\"idle\")
+		
+		
+
+	move_and_slide()
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj354"]
-size = Vector2(14.92, 28)
+size = Vector2(3.1400003, 11)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ctkvv"]
 
 [node name="Node2D" type="Node2D" unique_id=743133876]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983888136]
-position = Vector2(0.9999764, -0.9999933)
-scale = Vector2(7.9791665, 5.450001)
+position = Vector2(-1.2010753, 1.4999962)
+scale = Vector2(1.191853, 0.86875004)
 texture = ExtResource("1_71xtm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
 zoom = Vector2(1.7, 1.7)
 
-[node name="Michael" type="CharacterBody2D" parent="." unique_id=928902812]
-position = Vector2(325, 104)
-script = ExtResource("25_1bd0r")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Michael" unique_id=697046885]
-sprite_frames = SubResource("SpriteFrames_18u8k")
-animation = &"walk"
-frame_progress = 0.6212001
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Michael" unique_id=1203395953]
-position = Vector2(-4, 7)
-shape = SubResource("RectangleShape2D_wtpuq")
-
 [node name="Linda" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(-783, -412)
+position = Vector2(-147, -407)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Linda" unique_id=2031107873]
+modulate = Color(0.63529414, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"jump"
@@ -254,15 +203,91 @@ animation = &"jump"
 position = Vector2(454, 520.5)
 shape = SubResource("RectangleShape2D_ctkvv")
 
+[node name="Charla" type="CharacterBody2D" parent="." unique_id=1568944175]
+position = Vector2(-740, -403)
+script = SubResource("GDScript_71xtm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Charla" unique_id=1361607634]
+modulate = Color(0.9372549, 0, 0, 1)
+position = Vector2(455, 516)
+sprite_frames = SubResource("SpriteFrames_ctkvv")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Charla" unique_id=1937145098]
+position = Vector2(454, 520.5)
+shape = SubResource("RectangleShape2D_ctkvv")
+
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(0, 151)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform" unique_id=1369956303]
+position = Vector2(-294.5, 8.5)
 scale = Vector2(50, 1)
 shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
 one_way_collision_direction = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform" unique_id=388142278]
-scale = Vector2(750, 30)
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="mainPlatform2" type="StaticBody2D" parent="." unique_id=1427906965]
+position = Vector2(593, 151)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform2" unique_id=1356829084]
+position = Vector2(-294.5, 8.5)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform2" unique_id=44208588]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="mainPlatform3" type="StaticBody2D" parent="." unique_id=531525526]
+position = Vector2(483, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform3" unique_id=1682650635]
+position = Vector2(-294.5, 8.5)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform3" unique_id=871082494]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="mainPlatform4" type="StaticBody2D" parent="." unique_id=1757763699]
+position = Vector2(127, 34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform4" unique_id=873066803]
+position = Vector2(-294.5, 8.5)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform4" unique_id=1089758537]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="mainPlatform5" type="StaticBody2D" parent="." unique_id=1299565964]
+position = Vector2(304, -62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform5" unique_id=824610565]
+position = Vector2(-294.5, 8.5)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform5" unique_id=988230143]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
