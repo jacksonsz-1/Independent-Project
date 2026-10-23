@@ -4,6 +4,19 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+signal health_changed(new_health: float)
+
+@export var max_health: float = 100.0
+var current_health: float = max_health
+
+func take_damage(amount: float) -> void:
+	current_health -= amount
+	current_health = clamp(current_health, 0.0, max_health)
+	
+	health_changed.emit(current_health)
+	
+	if current_health <= 0:
+		queue_free()
 
 func _physics_process(delta: float) -> void:
 	
@@ -15,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animated_sprite.play("jump")
+		take_damage(20)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

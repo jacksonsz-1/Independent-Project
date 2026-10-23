@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://d1b0itwt1yxv5" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk2.png" id="38_q1j5q"]
 [ext_resource type="Texture2D" uid="uid://ciqrbbv21jpcp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk3.png" id="39_wqbfb"]
 [ext_resource type="Texture2D" uid="uid://df0vpyytg17bj" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk4.png" id="40_mat1i"]
+[ext_resource type="Script" uid="uid://c3fwd1c4wji8n" path="res://scenes/health_bar.gd" id="42_yoxka"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_18u8k"]
 animations = [{
@@ -211,12 +212,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctkvv"]
-size = Vector2(34, 53)
+size = Vector2(29, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj354"]
 size = Vector2(14.92, 28)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ctkvv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ggwd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uj354"]
+bg_color = Color(0, 1, 0, 1)
 
 [node name="Node2D" type="Node2D" unique_id=743133876]
 
@@ -251,7 +258,7 @@ sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"punch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=595809375]
-position = Vector2(454, 520.5)
+position = Vector2(456.5, 526)
 shape = SubResource("RectangleShape2D_ctkvv")
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
@@ -266,3 +273,16 @@ one_way_collision_direction = Vector2(0, -1)
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform" unique_id=388142278]
 scale = Vector2(750, 30)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2094573512]
+
+[node name="healthBar" type="ProgressBar" parent="CanvasLayer" unique_id=47554855 node_paths=PackedStringArray("player")]
+offset_left = -429.0
+offset_top = 236.0
+offset_right = -135.0
+offset_bottom = 259.0
+theme_override_styles/background = SubResource("StyleBoxFlat_7ggwd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uj354")
+value = 100.0
+script = ExtResource("42_yoxka")
+player = NodePath("../../Player2")
