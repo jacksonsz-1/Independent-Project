@@ -167,7 +167,7 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if not Input.is_anything_pressed() and is_on_floor()   and not animated_sprite.animation == \"punch\":
+		if not Input.is_anything_pressed() and is_on_floor() and not animated_sprite.animation == \"punch\":
 			animated_sprite.play(\"idle\")
 		
 
@@ -177,6 +177,9 @@ func _physics_process(delta: float) -> void:
 	## attacks
 	if Input.is_action_just_pressed(\"charla punch\"):
 		animated_sprite.play(\"punch\")
+		
+	if animated_sprite.animation == \"punch\" and animated_sprite.frame == 2:
+		animated_sprite.play(\"idle\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj354"]
@@ -208,7 +211,7 @@ script = ExtResource("1_b1pjr")
 modulate = Color(0.63529414, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"jump"
+animation = &"punch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Linda" unique_id=595809375]
 position = Vector2(453, 528)
