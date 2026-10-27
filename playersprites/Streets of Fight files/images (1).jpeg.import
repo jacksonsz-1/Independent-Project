@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg5etj6tl2tss"
-path="res://.godot/imported/images (1).jpeg-aa4a1939b7abc5a39c8865c702ef2a66.ctex"
+path="res://.godot/imported/images (1).jpeg-bb1b4e1eac30b60c42609343aa43c49d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/images (1).jpeg"
-dest_files=["res://.godot/imported/images (1).jpeg-aa4a1939b7abc5a39c8865c702ef2a66.ctex"]
+source_file="res://playersprites/images (1).jpeg"
+dest_files=["res://.godot/imported/images (1).jpeg-bb1b4e1eac30b60c42609343aa43c49d.ctex"]
 
 [params]
 
