@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gnewxi4wdblx"]
 
-[ext_resource type="Texture2D" uid="uid://dy84iqwmx84y" path="res://playersprites/images (3).jpeg" id="1_71xtm"]
+[ext_resource type="Texture2D" uid="uid://ctm6duvpfgs6r" path="res://playersprites/Streets of Fight files/images (3).jpeg" id="1_71xtm"]
 [ext_resource type="Script" uid="uid://daedpx7fiw5nf" path="res://scenes/player_1.gd" id="1_b1pjr"]
 [ext_resource type="Texture2D" uid="uid://djiet3je5ne6l" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Hurt/hurt1.png" id="1_cdrmf"]
 [ext_resource type="Texture2D" uid="uid://bhac5sa77fm8q" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_jaeev"]
@@ -182,8 +182,8 @@ size = Vector2(3.1400003, 11)
 [node name="Node2D" type="Node2D" unique_id=743133876]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983888136]
-position = Vector2(-1.2010753, 1.4999962)
-scale = Vector2(1.191853, 0.86875004)
+position = Vector2(0.29885465, -1.0000014)
+scale = Vector2(1.1965551, 0.90416664)
 texture = ExtResource("1_71xtm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
