@@ -309,18 +309,18 @@ texture = SubResource("PlaceholderTexture2D_ctkvv")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2094573512]
 
 [node name="charlaHealth" type="ProgressBar" parent="CanvasLayer" unique_id=2122861632]
-offset_left = 9.0
-offset_top = 13.0
-offset_right = 288.0
-offset_bottom = 40.0
+offset_left = 18.0
+offset_top = 680.0
+offset_right = 454.0
+offset_bottom = 707.0
 value = 100.0
 script = ExtResource("26_d7e6r")
 
 [node name="lindaHealth" type="ProgressBar" parent="CanvasLayer" unique_id=1616831451]
-offset_left = 984.0
-offset_top = 13.0
-offset_right = 1263.0
-offset_bottom = 40.0
+offset_left = 837.0
+offset_top = 680.0
+offset_right = 1267.0
+offset_bottom = 707.0
 value = 100.0
 script = SubResource("GDScript_d7e6r")
 
