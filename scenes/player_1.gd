@@ -35,6 +35,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		animated_sprite.flip_h = (direction < 0)
 		animated_sprite.play("jump")
+		idle.disabled = true
+		walk.disabled = true
 		jump.disabled = false
 		
 	if animated_sprite.frame == 3 and is_on_floor():
@@ -50,6 +52,8 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor and not animated_sprite.animation == "jump" and not animated_sprite.animation == "punch":
 			animated_sprite.play("walk")
 			animated_sprite.flip_h = (direction < 0)
+			idle.disabled = true
+			jump.disabled = true
 			walk.disabled = false
 		
 		
