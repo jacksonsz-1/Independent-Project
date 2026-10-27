@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bdai1st2xx4vb"]
+
+[ext_resource type="Script" uid="uid://da24531b47rng" path="res://scenes/startscreen.gd" id="1_m1yxm"]
+[ext_resource type="Texture2D" uid="uid://wy4fheuha1a8" path="res://playersprites/Streets of Fight files/images.jpeg" id="2_o6o42"]
+
+[node name="Node2D" type="Node2D" unique_id=107986842]
+script = ExtResource("1_m1yxm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=166880092]
+zoom = Vector2(1.7, 1.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=908101585]
+position = Vector2(-0.5000229, -3.5000172)
+scale = Vector2(1.2204213, 1.0631313)
+texture = ExtResource("2_o6o42")
