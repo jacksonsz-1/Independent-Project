@@ -194,7 +194,7 @@ texture = ExtResource("1_71xtm")
 zoom = Vector2(1.7, 1.7)
 
 [node name="Linda" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(-154, -408)
+position = Vector2(-154, -400)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Linda" unique_id=2031107873]
