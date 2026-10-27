@@ -40,19 +40,26 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		
-		if is_on_floor and not animated_sprite.animation == "jump":
+		if is_on_floor and not animated_sprite.animation == "jump" and not animated_sprite.animation == "punch":
 			animated_sprite.play("walk")
 			animated_sprite.flip_h = (direction < 0)
 		
 		
-		##dlelteDFADSF
+		
 		
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if not Input.is_anything_pressed() and is_on_floor():
+		if not Input.is_anything_pressed() and is_on_floor() and not animated_sprite.animation == "punch":
 			animated_sprite.play("idle")
-		
 		
 
 	move_and_slide()
+	
+	
+	## attacks
+	if Input.is_action_just_pressed("linda punch"):
+		animated_sprite.play("punch")
+		
+	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
+		animated_sprite.play("idle")
