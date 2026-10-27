@@ -27,6 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
 [ext_resource type="Script" uid="uid://c3fwd1c4wji8n" path="res://scenes/health_bar.gd" id="42_yoxka"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7e6r"]
+radius = 11.0
+height = 48.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
 animations = [{
 "frames": [{
@@ -124,9 +128,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctkvv"]
-size = Vector2(29, 42)
-
 [sub_resource type="GDScript" id="GDScript_71xtm"]
 script/source = "extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
@@ -207,15 +208,15 @@ zoom = Vector2(1.7, 1.7)
 position = Vector2(-194, -391)
 script = ExtResource("1_b1pjr")
 
+[node name="Player1#CollisionShape2D2" type="CollisionShape2D" parent="Linda" unique_id=2022889825]
+position = Vector2(-94, 514)
+shape = SubResource("CapsuleShape2D_d7e6r")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Linda" unique_id=2031107873]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"punch"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Linda" unique_id=595809375]
-position = Vector2(453, 528)
-shape = SubResource("RectangleShape2D_ctkvv")
 
 [node name="Charla" type="CharacterBody2D" parent="." unique_id=1568944175]
 position = Vector2(-740, -403)
@@ -228,8 +229,8 @@ sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"punch"
 
 [node name="Player1#CollisionShape2D" type="CollisionShape2D" parent="Charla" unique_id=534867811]
-position = Vector2(456, 526)
-shape = SubResource("RectangleShape2D_ctkvv")
+position = Vector2(1003, 537)
+shape = SubResource("CapsuleShape2D_d7e6r")
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)
