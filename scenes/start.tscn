@@ -127,6 +127,14 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8aotp"]
 height = 48.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7fht"]
+radius = 12.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxmfj"]
+radius = 12.0
+height = 48.0
+
 [sub_resource type="GDScript" id="GDScript_71xtm"]
 script/source = "extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
@@ -200,7 +208,7 @@ height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_728ow"]
 radius = 12.0
-height = 38.0
+height = 42.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmdiu"]
 radius = 12.0
@@ -246,11 +254,23 @@ script = ExtResource("1_b1pjr")
 modulate = Color(0, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"punch"
+animation = &"jump"
+frame = 3
+frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Linda" unique_id=595809375]
+[node name="LindaIdleCollision" type="CollisionShape2D" parent="Linda" unique_id=595809375]
 position = Vector2(457, 524)
 shape = SubResource("CapsuleShape2D_8aotp")
+
+[node name="LindaJumpCollision" type="CollisionShape2D" parent="Linda" unique_id=1358300182]
+position = Vector2(450, 521)
+shape = SubResource("CapsuleShape2D_j7fht")
+disabled = true
+
+[node name="LindaWalkCollision" type="CollisionShape2D" parent="Linda" unique_id=711911841]
+position = Vector2(455, 525)
+shape = SubResource("CapsuleShape2D_gxmfj")
+disabled = true
 
 [node name="Charla" type="CharacterBody2D" parent="." unique_id=1568944175]
 position = Vector2(-740, -403)
@@ -260,19 +280,21 @@ script = SubResource("GDScript_71xtm")
 modulate = Color(0.9372549, 0, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"idle"
+animation = &"jump"
+frame = 3
+frame_progress = 1.0
 
 [node name="CharlaIdleCollision" type="CollisionShape2D" parent="Charla" unique_id=534867811]
 position = Vector2(451, 525)
 shape = SubResource("CapsuleShape2D_d7e6r")
 
 [node name="CharlaJumpCollision" type="CollisionShape2D" parent="Charla" unique_id=1816262403]
-position = Vector2(449, 519)
+position = Vector2(450, 521)
 shape = SubResource("CapsuleShape2D_728ow")
 disabled = true
 
 [node name="CharlaWalkCollision" type="CollisionShape2D" parent="Charla" unique_id=1480235724]
-position = Vector2(453, 525)
+position = Vector2(455, 525)
 shape = SubResource("CapsuleShape2D_fmdiu")
 disabled = true
 
