@@ -27,10 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
 [ext_resource type="Script" uid="uid://c3fwd1c4wji8n" path="res://scenes/health_bar.gd" id="42_yoxka"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7e6r"]
-radius = 11.0
-height = 48.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
 animations = [{
 "frames": [{
@@ -128,6 +124,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8aotp"]
+height = 48.0
+
 [sub_resource type="GDScript" id="GDScript_71xtm"]
 script/source = "extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
@@ -183,6 +182,14 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play(\"idle\")
 "
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7e6r"]
+radius = 11.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_728ow"]
+radius = 12.0
+height = 38.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj354"]
 size = Vector2(3.1400003, 8)
 
@@ -208,15 +215,15 @@ zoom = Vector2(1.7, 1.7)
 position = Vector2(-194, -391)
 script = ExtResource("1_b1pjr")
 
-[node name="Player1#CollisionShape2D2" type="CollisionShape2D" parent="Linda" unique_id=2022889825]
-position = Vector2(-94, 514)
-shape = SubResource("CapsuleShape2D_d7e6r")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Linda" unique_id=2031107873]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"punch"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Linda" unique_id=595809375]
+position = Vector2(457, 524)
+shape = SubResource("CapsuleShape2D_8aotp")
 
 [node name="Charla" type="CharacterBody2D" parent="." unique_id=1568944175]
 position = Vector2(-740, -403)
@@ -226,11 +233,19 @@ script = SubResource("GDScript_71xtm")
 modulate = Color(0.9372549, 0, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"punch"
+animation = &"jump"
+frame = 3
+frame_progress = 1.0
 
-[node name="Player1#CollisionShape2D" type="CollisionShape2D" parent="Charla" unique_id=534867811]
-position = Vector2(1003, 537)
+[node name="CharlaIdleCollision" type="CollisionShape2D" parent="Charla" unique_id=534867811]
+position = Vector2(451, 525)
 shape = SubResource("CapsuleShape2D_d7e6r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Charla" unique_id=1664528302]
+
+[node name="CharlaIdleCollision2" type="CollisionShape2D" parent="Charla" unique_id=1816262403]
+position = Vector2(449, 519)
+shape = SubResource("CapsuleShape2D_728ow")
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)
