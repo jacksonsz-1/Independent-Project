@@ -4,6 +4,19 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
+signal health_changed(new_health: float)
+
+@export var max_health: float = 100.0
+var current_health: float = max_health
+
+func take_damage(amount: float) -> void:
+	current_health -= amount
+	current_health = clamp(current_health, 0.0, max_health)
+	
+	health_changed.emit(current_health)
+	
+	if current_health <= 0:
+		queue_free()
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
