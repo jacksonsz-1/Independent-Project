@@ -3,3 +3,4 @@
 [node name="Node2D" type="Node2D" unique_id=107986842]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=166880092]
+zoom = Vector2(1.7, 1.7)
