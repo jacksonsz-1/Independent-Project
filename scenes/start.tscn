@@ -201,11 +201,11 @@ texture = ExtResource("1_71xtm")
 zoom = Vector2(1.7, 1.7)
 
 [node name="Linda" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(-166, -436)
+position = Vector2(-194, -391)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Linda" unique_id=2031107873]
-modulate = Color(0.63529414, 1, 0, 1)
+modulate = Color(0, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"jump"
@@ -269,3 +269,48 @@ theme_override_styles/background = SubResource("StyleBoxFlat_7ggwd")
 theme_override_styles/fill = SubResource("StyleBoxFlat_uj354")
 value = 100.0
 script = ExtResource("42_yoxka")
+
+[node name="mainPlatform3" type="StaticBody2D" parent="." unique_id=35818333]
+position = Vector2(294, 39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform3" unique_id=273131062]
+position = Vector2(-294.5, 10)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform3" unique_id=866527013]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="mainPlatform4" type="StaticBody2D" parent="." unique_id=2106472603]
+position = Vector2(34, -79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform4" unique_id=398539768]
+position = Vector2(-294.5, 10)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform4" unique_id=1209158202]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="mainPlatform5" type="StaticBody2D" parent="." unique_id=273512691]
+position = Vector2(546, -89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform5" unique_id=911310341]
+position = Vector2(-294.5, 10)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform5" unique_id=450613704]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")

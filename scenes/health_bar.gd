@@ -11,3 +11,7 @@ func _ready() -> void:
 
 func _on_player_health_changed(new_health: float) -> void:
 	value = new_health
+
+
+#kdjf ksdjfk
+#jfdh ajhfj haj ja ja hjah hafjk hjahxdcfghjkl;';lkbvcxcgyuhbvhuibijn 
