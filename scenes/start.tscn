@@ -25,22 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://pghaw03b4ihg" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk9.png" id="13_g3i1d"]
 [ext_resource type="Texture2D" uid="uid://brbypsay7kl5h" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Punch/punch3.png" id="13_gxmfj"]
 [ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
-[ext_resource type="Script" uid="uid://bakb0w7ens4ia" path="res://scenes/player_2.gd" id="25_1bd0r"]
-[ext_resource type="Texture2D" uid="uid://dmyda164up43g" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt1.png" id="26_xam4k"]
-[ext_resource type="Texture2D" uid="uid://hnunh7t3dif0" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt2.png" id="27_yoxka"]
-[ext_resource type="Texture2D" uid="uid://d0lotsu2cr2i0" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt3.png" id="28_xekfo"]
-[ext_resource type="Texture2D" uid="uid://b3v1tokjn2pol" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Hurt/hurt4.png" id="29_ypgks"]
-[ext_resource type="Texture2D" uid="uid://cwrhem453uchd" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle1.png" id="30_cs3pn"]
-[ext_resource type="Texture2D" uid="uid://bugcj6c70tpkp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle2.png" id="31_ycbhe"]
-[ext_resource type="Texture2D" uid="uid://gvyf5w6mo5qk" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle3.png" id="32_5xbah"]
-[ext_resource type="Texture2D" uid="uid://bs1k8v5xr2gxg" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Idle/idle4.png" id="33_pxum8"]
-[ext_resource type="Texture2D" uid="uid://bjft7q3d50x0f" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch1.png" id="34_vdf25"]
-[ext_resource type="Texture2D" uid="uid://d10gvimb0ci65" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch2.png" id="35_0v776"]
-[ext_resource type="Texture2D" uid="uid://cl8csjijksr5w" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Punch/punch3.png" id="36_k41c7"]
-[ext_resource type="Texture2D" uid="uid://bvjf637uk7pwy" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk1.png" id="37_i5q5x"]
-[ext_resource type="Texture2D" uid="uid://d1b0itwt1yxv5" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk2.png" id="38_q1j5q"]
-[ext_resource type="Texture2D" uid="uid://ciqrbbv21jpcp" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk3.png" id="39_wqbfb"]
-[ext_resource type="Texture2D" uid="uid://df0vpyytg17bj" path="res://playersprites/Streets of Fight files/Assets/Sprites/Enemy-Punk/Walk/walk4.png" id="40_mat1i"]
 [ext_resource type="Script" uid="uid://c3fwd1c4wji8n" path="res://scenes/health_bar.gd" id="42_yoxka"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
@@ -196,7 +180,7 @@ func _physics_process(delta: float) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj354"]
-size = Vector2(3.1400003, 11)
+size = Vector2(3.1400003, 8)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ctkvv"]
 
@@ -217,7 +201,7 @@ texture = ExtResource("1_71xtm")
 zoom = Vector2(1.7, 1.7)
 
 [node name="Linda" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(-154, -400)
+position = Vector2(-166, -436)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Linda" unique_id=2031107873]
@@ -227,7 +211,7 @@ sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Linda" unique_id=595809375]
-position = Vector2(454, 520.5)
+position = Vector2(453, 528)
 shape = SubResource("RectangleShape2D_ctkvv")
 
 [node name="Charla" type="CharacterBody2D" parent="." unique_id=1568944175]
@@ -240,15 +224,15 @@ position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"punch"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=595809375]
-position = Vector2(456.5, 526)
+[node name="Player1#CollisionShape2D" type="CollisionShape2D" parent="Charla" unique_id=534867811]
+position = Vector2(456, 526)
 shape = SubResource("RectangleShape2D_ctkvv")
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
-position = Vector2(0, 151)
+position = Vector2(32, 152)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform" unique_id=1369956303]
-position = Vector2(-294.5, 8.5)
+position = Vector2(-294.5, 10)
 scale = Vector2(50, 1)
 shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
@@ -259,15 +243,29 @@ position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
 
+[node name="mainPlatform2" type="StaticBody2D" parent="." unique_id=1159747208]
+position = Vector2(552, 155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainPlatform2" unique_id=2023041045]
+position = Vector2(-294.5, 10)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_uj354")
+one_way_collision_margin = 128.0
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="mainPlatform2" unique_id=1536128027]
+position = Vector2(-295.5, 9)
+scale = Vector2(159.00003, 11.999999)
+texture = SubResource("PlaceholderTexture2D_ctkvv")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2094573512]
 
-[node name="healthBar" type="ProgressBar" parent="CanvasLayer" unique_id=47554855 node_paths=PackedStringArray("player")]
-offset_left = -429.0
-offset_top = 236.0
-offset_right = -135.0
-offset_bottom = 259.0
+[node name="healthBar" type="ProgressBar" parent="CanvasLayer" unique_id=47554855]
+offset_left = -361.0
+offset_top = -198.0
+offset_right = -67.0
+offset_bottom = -175.0
 theme_override_styles/background = SubResource("StyleBoxFlat_7ggwd")
 theme_override_styles/fill = SubResource("StyleBoxFlat_uj354")
 value = 100.0
 script = ExtResource("42_yoxka")
-player = NodePath("../../Player2")
