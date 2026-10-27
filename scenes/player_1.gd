@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.flip_h = (direction < 0)
 		
 		
-		
+		##dlelte
 		
 		
 	else:
