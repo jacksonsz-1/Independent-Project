@@ -310,7 +310,7 @@ frame = 3
 frame_progress = 1.0
 
 [node name="CharlaIdleCollision" type="CollisionShape2D" parent="Charla" unique_id=534867811]
-position = Vector2(451, 525)
+position = Vector2(457, 524)
 shape = SubResource("CapsuleShape2D_d7e6r")
 
 [node name="CharlaJumpCollision" type="CollisionShape2D" parent="Charla" unique_id=1816262403]
