@@ -3,23 +3,27 @@ extends CharacterBody2D
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
+@export var max_health: int = 100
+var current_health: int
+var lives: int = 3
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
-signal health_changed(new_health: float)
+signal health_change(new_health)
 
-@export var max_health: float = 100.0
-var current_health: float = max_health
 
-func take_damage(amount: float) -> void:
+func _ready():
+	current_health = max_health
+	take_damage(30)
+	print(current_health)
+
+func take_damage(amount: int):
 	current_health -= amount
-	current_health = clamp(current_health, 0.0, max_health)
-	
-	health_changed.emit(current_health)
+	health_change.emit(current_health)
 	
 	if current_health <= 0:
-		queue_free()
+		die()
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -75,3 +79,11 @@ func _physics_process(delta: float) -> void:
 		
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
 		animated_sprite.play("idle")
+		
+		
+func die():
+	pass
+
+
+func _on_charla_health_changed(new_health: Variant) -> void:
+	pass # Replace with function body.
