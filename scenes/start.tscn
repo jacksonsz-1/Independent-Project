@@ -76,13 +76,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_fmdiu")
-}, {
-"duration": 1.0,
 "texture": ExtResource("12_j7fht")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_gxmfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fmdiu")
 }],
 "loop": 0,
 "name": &"punch",
@@ -254,8 +254,8 @@ script = ExtResource("1_b1pjr")
 modulate = Color(0, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"jump"
-frame = 3
+animation = &"punch"
+frame = 2
 frame_progress = 1.0
 
 [node name="LindaIdleCollision" type="CollisionShape2D" parent="Linda" unique_id=595809375]
@@ -280,9 +280,7 @@ script = SubResource("GDScript_71xtm")
 modulate = Color(0.9372549, 0, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"jump"
-frame = 3
-frame_progress = 1.0
+animation = &"punch"
 
 [node name="CharlaIdleCollision" type="CollisionShape2D" parent="Charla" unique_id=534867811]
 position = Vector2(457, 524)
@@ -297,6 +295,9 @@ disabled = true
 position = Vector2(455, 525)
 shape = SubResource("CapsuleShape2D_fmdiu")
 disabled = true
+
+[node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="Charla" unique_id=1661929339]
+polygon = PackedVector2Array(492, 518, 473, 518, 470, 519, 465, 531, 468, 537, 465, 548, 442, 547, 455, 531, 460, 520, 453, 517, 455, 508, 468, 503, 472, 508, 472, 511, 492, 512)
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)

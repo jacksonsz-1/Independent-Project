@@ -22,9 +22,6 @@ func take_damage(amount: float) -> void:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	jump.disabled = true
-	walk.disabled = true
-	idle.disabled = false
 	var direction := Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
 	if not is_on_floor():
@@ -36,10 +33,14 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = (direction < 0)
 		animated_sprite.play("jump")
 		jump.disabled = false
+		walk.disabled = true
+		idle.disabled = true
 		
 	if animated_sprite.frame == 3 and is_on_floor():
 			animated_sprite.play("idle")
-		
+			jump.disabled = true
+			walk.disabled = true
+			idle.disabled = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -61,6 +62,8 @@ func _physics_process(delta: float) -> void:
 		if not Input.is_anything_pressed() and is_on_floor() and not animated_sprite.animation == "punch":
 			animated_sprite.play("idle")
 			idle.disabled = false
+			jump.disabled = true
+			walk.disabled = true
 		
 
 	move_and_slide()
