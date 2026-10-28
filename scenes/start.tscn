@@ -141,9 +141,28 @@ script/source = "extends CharacterBody2D
 @onready var walk: CollisionShape2D = $CharlaWalkCollision
 @onready var idle: CollisionShape2D = $CharlaIdleCollision
 @onready var jump: CollisionShape2D = $CharlaJumpCollision
+@export var max_health: int = 100
+var current_health: int
+var lives: int = 3
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
+
+signal health_changed(new_health)
+
+func _ready():
+	current_health = max_health
+	take_damage(20)
+	print(current_health)
+
+func take_damage(amount: int):
+	current_health -= amount
+	
+	health_changed.emit(current_health)
+	
+	if current_health <= 0:
+		die()
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -200,6 +219,11 @@ func _physics_process(delta: float) -> void:
 		
 	if animated_sprite.animation == \"punch\" and animated_sprite.frame == 2:
 		animated_sprite.play(\"idle\")
+		
+	
+	
+func die():
+	pass
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7e6r"]
@@ -221,18 +245,19 @@ size = Vector2(3.1400003, 8)
 
 [sub_resource type="GDScript" id="GDScript_d7e6r"]
 script/source = "extends ProgressBar
-@export var player: CharacterBody2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-	if player:
-		max_value = player.max_health
-		value = player.current_health
-		player.connect(\"health_changed\", _on_player_health_changed)
 
 
-func _on_player_health_changed(new_health: float) -> void:
+
+
+
+
+
+func _on_linda_health_change(new_health: Variant) -> void:
 	value = new_health
 "
 
@@ -390,3 +415,6 @@ one_way_collision_direction = Vector2(0, -1)
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[connection signal="health_change" from="Linda" to="CanvasLayer/lindaHealth" method="_on_linda_health_change"]
+[connection signal="health_changed" from="Charla" to="CanvasLayer/charlaHealth" method="_on_charla_health_changed"]
