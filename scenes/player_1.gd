@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var charla: CharacterBody2D = $Charla
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
@@ -15,7 +16,6 @@ signal health_change(new_health)
 
 func _ready():
 	current_health = max_health
-	take_damage(30)
 	print(current_health)
 
 func take_damage(amount: int):
@@ -26,10 +26,32 @@ func take_damage(amount: int):
 		die()
 
 func _physics_process(delta: float) -> void:
+	var punching := false
+	
+	
+	#damage
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider == charla:
+			print("charla")
+			if collider == charla and punching == true:
+				charla.take_damage(3)
+				print(charla.current_health)
+	
+	
+	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if animated_sprite.animation == "punch":
+		punching = true
+	
+	else:
+		punching = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
