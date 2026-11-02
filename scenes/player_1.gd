@@ -1,34 +1,57 @@
 extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var charla: CharacterBody2D = $Charla
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
+@export var max_health: int = 100
+var current_health: int
+var lives: int = 3
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
-signal health_changed(new_health: float)
+signal health_change(new_health)
 
-@export var max_health: float = 100.0
-var current_health: float = max_health
 
-func take_damage(amount: float) -> void:
+func _ready():
+	current_health = max_health
+	print(current_health)
+
+func take_damage(amount: int):
 	current_health -= amount
-	current_health = clamp(current_health, 0.0, max_health)
-	
-	health_changed.emit(current_health)
+	health_change.emit(current_health)
 	
 	if current_health <= 0:
-		queue_free()
+		die()
 
 func _physics_process(delta: float) -> void:
-	jump.disabled = true
-	walk.disabled = true
-	idle.disabled = false
+	var punching := false
+	
+	
+	#damage
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider == charla:
+			print("charla")
+			if collider == charla and punching == true:
+				charla.take_damage(3)
+				print(charla.current_health)
+	
+	
+	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if animated_sprite.animation == "punch":
+		punching = true
+	
+	else:
+		punching = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
@@ -38,10 +61,14 @@ func _physics_process(delta: float) -> void:
 		idle.disabled = true
 		walk.disabled = true
 		jump.disabled = false
+		walk.disabled = true
+		idle.disabled = true
 		
 	if animated_sprite.frame == 3 and is_on_floor():
 			animated_sprite.play("idle")
-		
+			jump.disabled = true
+			walk.disabled = true
+			idle.disabled = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -65,6 +92,8 @@ func _physics_process(delta: float) -> void:
 		if not Input.is_anything_pressed() and is_on_floor() and not animated_sprite.animation == "punch":
 			animated_sprite.play("idle")
 			idle.disabled = false
+			jump.disabled = true
+			walk.disabled = true
 		
 
 	move_and_slide()
@@ -76,3 +105,11 @@ func _physics_process(delta: float) -> void:
 		
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
 		animated_sprite.play("idle")
+		
+		
+func die():
+	pass
+
+
+func _on_charla_health_changed(new_health: Variant) -> void:
+	pass # Replace with function body.
