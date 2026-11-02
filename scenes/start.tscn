@@ -36,7 +36,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_b1pjr")
 }],
-"loop": 1,
+"loop": true,
 "name": &"hurt",
 "speed": 7.0
 }, {
@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_y16t7")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 7.0
 }, {
@@ -70,21 +70,21 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_728ow")
 }],
-"loop": 0,
+"loop": false,
 "name": &"jump",
 "speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_fmdiu")
-}, {
-"duration": 1.0,
 "texture": ExtResource("12_j7fht")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_gxmfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fmdiu")
 }],
-"loop": 0,
+"loop": false,
 "name": &"punch",
 "speed": 9.0
 }, {
@@ -119,7 +119,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_cdrmf")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -127,15 +127,44 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8aotp"]
 height = 48.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7fht"]
+radius = 12.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxmfj"]
+radius = 12.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8wh6k"]
+
 [sub_resource type="GDScript" id="GDScript_71xtm"]
 script/source = "extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var walk: CollisionShape2D = $CharlaWalkCollision
 @onready var idle: CollisionShape2D = $CharlaIdleCollision
 @onready var jump: CollisionShape2D = $CharlaJumpCollision
+@export var max_health: int = 100
+var current_health: int
+var lives: int = 3
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
+
+signal health_changed(new_health)
+
+func _ready():
+	current_health = max_health
+	take_damage(20)
+	print(current_health)
+
+func take_damage(amount: int):
+	current_health -= amount
+	
+	health_changed.emit(current_health)
+	
+	if current_health <= 0:
+		die()
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -192,6 +221,11 @@ func _physics_process(delta: float) -> void:
 		
 	if animated_sprite.animation == \"punch\" and animated_sprite.frame == 2:
 		animated_sprite.play(\"idle\")
+		
+	
+	
+func die():
+	pass
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7e6r"]
@@ -200,7 +234,7 @@ height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_728ow"]
 radius = 12.0
-height = 38.0
+height = 42.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmdiu"]
 radius = 12.0
@@ -213,18 +247,19 @@ size = Vector2(3.1400003, 8)
 
 [sub_resource type="GDScript" id="GDScript_d7e6r"]
 script/source = "extends ProgressBar
-@export var player: CharacterBody2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-	if player:
-		max_value = player.max_health
-		value = player.current_health
-		player.connect(\"health_changed\", _on_player_health_changed)
 
 
-func _on_player_health_changed(new_health: float) -> void:
+
+
+
+
+
+func _on_linda_health_change(new_health: Variant) -> void:
 	value = new_health
 "
 
@@ -247,10 +282,27 @@ modulate = Color(0, 1, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"punch"
+frame = 2
+frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Linda" unique_id=595809375]
+[node name="LindaIdleCollision" type="CollisionShape2D" parent="Linda" unique_id=595809375]
 position = Vector2(457, 524)
 shape = SubResource("CapsuleShape2D_8aotp")
+
+[node name="LindaJumpCollision" type="CollisionShape2D" parent="Linda" unique_id=1358300182]
+position = Vector2(450, 521)
+shape = SubResource("CapsuleShape2D_j7fht")
+disabled = true
+
+[node name="LindaWalkCollision" type="CollisionShape2D" parent="Linda" unique_id=711911841]
+position = Vector2(455, 525)
+shape = SubResource("CapsuleShape2D_gxmfj")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="Linda" unique_id=206116531]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Linda/Area2D" unique_id=1431810479]
+shape = SubResource("CapsuleShape2D_8wh6k")
 
 [node name="Charla" type="CharacterBody2D" parent="." unique_id=1568944175]
 position = Vector2(-740, -403)
@@ -260,19 +312,19 @@ script = SubResource("GDScript_71xtm")
 modulate = Color(0.9372549, 0, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"idle"
+animation = &"punch"
 
 [node name="CharlaIdleCollision" type="CollisionShape2D" parent="Charla" unique_id=534867811]
-position = Vector2(451, 525)
+position = Vector2(457, 524)
 shape = SubResource("CapsuleShape2D_d7e6r")
 
 [node name="CharlaJumpCollision" type="CollisionShape2D" parent="Charla" unique_id=1816262403]
-position = Vector2(449, 519)
+position = Vector2(450, 521)
 shape = SubResource("CapsuleShape2D_728ow")
 disabled = true
 
 [node name="CharlaWalkCollision" type="CollisionShape2D" parent="Charla" unique_id=1480235724]
-position = Vector2(453, 525)
+position = Vector2(455, 525)
 shape = SubResource("CapsuleShape2D_fmdiu")
 disabled = true
 
@@ -284,7 +336,6 @@ position = Vector2(-294.5, 10)
 scale = Vector2(50, 1)
 shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
-one_way_collision_direction = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform" unique_id=388142278]
 position = Vector2(-295.5, 9)
@@ -299,7 +350,6 @@ position = Vector2(-294.5, 10)
 scale = Vector2(50, 1)
 shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
-one_way_collision_direction = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform2" unique_id=1536128027]
 position = Vector2(-295.5, 9)
@@ -332,7 +382,6 @@ position = Vector2(-294.5, 10)
 scale = Vector2(50, 1)
 shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
-one_way_collision_direction = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform3" unique_id=866527013]
 position = Vector2(-295.5, 9)
@@ -347,7 +396,6 @@ position = Vector2(-294.5, 10)
 scale = Vector2(50, 1)
 shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
-one_way_collision_direction = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform4" unique_id=1209158202]
 position = Vector2(-295.5, 9)
@@ -362,9 +410,11 @@ position = Vector2(-294.5, 10)
 scale = Vector2(50, 1)
 shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
-one_way_collision_direction = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform5" unique_id=450613704]
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[connection signal="health_change" from="Linda" to="CanvasLayer/lindaHealth" method="_on_linda_health_change"]
+[connection signal="health_changed" from="Charla" to="CanvasLayer/charlaHealth" method="_on_charla_health_changed"]
