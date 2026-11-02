@@ -105,7 +105,3 @@ func _physics_process(delta: float) -> void:
 		
 func die():
 	pass
-
-
-func _on_charla_health_changed(new_health: Variant) -> void:
-	pass # Replace with function body.
