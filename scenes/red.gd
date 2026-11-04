@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var walk: CollisionShape2D = $CharlaWalkCollision
 @onready var idle: CollisionShape2D = $CharlaIdleCollision
 @onready var jump: CollisionShape2D = $CharlaJumpCollision
+@onready var punch: CollisionPolygon2D = $CharlaPunchCollision
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
@@ -41,12 +42,14 @@ func _physics_process(delta: float) -> void:
 		jump.disabled = false
 		idle.disabled = true
 		walk.disabled = true
+		punch.disabled = true
 		
 	if animated_sprite.frame == 3 and is_on_floor():
 			animated_sprite.play("idle")
 			idle.disabled = false
 			walk.disabled = true
 			jump.disabled = true
+			punch.disabled = true
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -61,6 +64,7 @@ func _physics_process(delta: float) -> void:
 			walk.disabled = false
 			jump.disabled = true
 			idle.disabled = true
+			punch.disabled = true
 		
 		
 		
@@ -73,6 +77,7 @@ func _physics_process(delta: float) -> void:
 			idle.disabled = false
 			jump.disabled = true
 			walk.disabled = true
+			punch.disabled = true
 		
 
 	move_and_slide()
@@ -81,6 +86,10 @@ func _physics_process(delta: float) -> void:
 	## attacks
 	if Input.is_action_just_pressed("charla punch"):
 		animated_sprite.play("punch")
+		idle.disabled = true
+		jump.disabled = true
+		walk.disabled = true
+		punch.disabled = false
 		
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
 		animated_sprite.play("idle")
