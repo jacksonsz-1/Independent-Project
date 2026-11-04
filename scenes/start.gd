@@ -1,6 +1,6 @@
 extends Node2D
 @onready var p_red: CharacterBody2D = $p_red
-@onready var marker: Marker2D = $p_red/Marker2D
+@onready var marker: Marker2D = $redMarker
 
 func _ready() -> void:
 	for p_red in get_tree().get_nodes_in_group("p_red"):

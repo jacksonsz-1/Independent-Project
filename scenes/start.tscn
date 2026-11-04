@@ -214,38 +214,39 @@ shape = SubResource("CapsuleShape2D_gxmfj")
 disabled = true
 
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
-position = Vector2(-738, -472)
+position = Vector2(-267, 71)
 script = ExtResource("26_8aotp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="p_red" unique_id=1361607634]
 modulate = Color(0.9372549, 0, 0, 1)
-position = Vector2(455, 516)
+position = Vector2(4, -7)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"hurt"
 
 [node name="CharlaIdleCollision" type="CollisionShape2D" parent="p_red" unique_id=534867811]
-position = Vector2(457, 524)
+position = Vector2(6, 1)
 shape = SubResource("CapsuleShape2D_d7e6r")
 
 [node name="CharlaJumpCollision" type="CollisionShape2D" parent="p_red" unique_id=1816262403]
-position = Vector2(450, 521)
+position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_728ow")
 disabled = true
 
 [node name="CharlaWalkCollision" type="CollisionShape2D" parent="p_red" unique_id=1480235724]
-position = Vector2(455, 525)
+position = Vector2(4, 2)
 shape = SubResource("CapsuleShape2D_fmdiu")
 disabled = true
 
 [node name="PunchHitbox" type="Area2D" parent="p_red" unique_id=1977990815]
+position = Vector2(-451, -523)
 collision_layer = 0
 
 [node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="p_red/PunchHitbox" unique_id=413019031]
 polygon = PackedVector2Array(470, 526, 492, 526, 492, 509, 475, 509, 472, 504, 460, 504, 461, 517, 443, 542, 447, 546, 457, 548, 467, 546)
 disabled = true
 
-[node name="Marker2D" type="Marker2D" parent="p_red" unique_id=259791175]
-position = Vector2(450, 521)
+[node name="redMarker" type="Marker2D" parent="." unique_id=259791175]
+position = Vector2(-264, 69)
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)
