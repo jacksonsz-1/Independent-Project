@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
-
+signal respawn()
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
@@ -29,11 +29,7 @@ func take_damage(amount: int):
 
 
 func _physics_process(delta: float) -> void:
-	
-	
-	
-	
-	
+
 	
 	var direction := Input.get_axis("Left", "Right")
 	# Add the gravity.
@@ -114,4 +110,4 @@ func _on_p_green_red_health_dealt(amount: Variant) -> void:
 	
 	
 func die():
-	pass
+	respawn.emit()
