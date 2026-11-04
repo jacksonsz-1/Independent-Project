@@ -30,12 +30,10 @@ func _physics_process(delta: float) -> void:
 	
 	
 	
-	#damage
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		if Input.is_action_just_pressed("linda punch") and collider.name == "p_red":
-			red_health_dealt.emit(3)
+	
+			
+		
+		
 		
 	
 	
@@ -106,7 +104,12 @@ func _physics_process(delta: float) -> void:
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
 		animated_sprite.play("idle")
 		
-		
+	#damage
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if Input.is_action_just_pressed("linda punch") and collider.name == "p_red":
+			red_health_dealt.emit(3)
 #RECEIVING DAMAGE
 func _on_p_red_green_health_dealt(amount: Variant) -> void:
 	take_damage(amount)

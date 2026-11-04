@@ -1,6 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=3]
+[gd_resource type="SpriteFrames" format=3 uid="uid://byrw2sx6gr8w4"]
 
-[ext_resource type="Texture2D" path="aura-arcane-64.png" id="1_sheet"]
+[ext_resource type="Texture2D" uid="uid://ctk4i8cymm7h7" path="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/auras/aura-arcane-64.png" id="1_sheet"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_00"]
 atlas = ExtResource("1_sheet")
@@ -117,7 +117,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_15")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 12.0
 }]
