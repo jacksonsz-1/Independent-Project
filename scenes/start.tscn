@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ctm6duvpfgs6r" path="res://playersprites/Streets of Fight files/images (3).jpeg" id="1_71xtm"]
 [ext_resource type="Script" uid="uid://daedpx7fiw5nf" path="res://scenes/green.gd" id="1_b1pjr"]
 [ext_resource type="Texture2D" uid="uid://djiet3je5ne6l" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Hurt/hurt1.png" id="1_cdrmf"]
+[ext_resource type="Script" uid="uid://co3xmbsyd475i" path="res://scenes/start.gd" id="1_j7fht"]
 [ext_resource type="Texture2D" uid="uid://bhac5sa77fm8q" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_jaeev"]
 [ext_resource type="Texture2D" uid="uid://c42mkdlsolt5x" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Hurt/hurt2.png" id="2_b1pjr"]
 [ext_resource type="Texture2D" uid="uid://d37nvw2ld0ive" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle2.png" id="2_kdmts"]
@@ -176,6 +177,7 @@ func _on_linda_health_change(new_health: Variant) -> void:
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4rvc"]
 
 [node name="Node2D" type="Node2D" unique_id=743133876]
+script = ExtResource("1_j7fht")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983888136]
 position = Vector2(0.29885465, -1.0000014)
@@ -241,6 +243,9 @@ collision_layer = 0
 [node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="p_red/PunchHitbox" unique_id=413019031]
 polygon = PackedVector2Array(470, 526, 492, 526, 492, 509, 475, 509, 472, 504, 460, 504, 461, 517, 443, 542, 447, 546, 457, 548, 467, 546)
 disabled = true
+
+[node name="Marker2D" type="Marker2D" parent="p_red" unique_id=259791175]
+position = Vector2(450, 521)
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)
@@ -348,3 +353,4 @@ script = ExtResource("29_fmdiu")
 [connection signal="red_health_dealt" from="p_green" to="p_red" method="_on_p_green_red_health_dealt"]
 [connection signal="green_health_dealt" from="p_red" to="p_green" method="_on_p_red_green_health_dealt"]
 [connection signal="health_changed" from="p_red" to="CanvasLayer/charlaHealth" method="_on_charla_health_changed"]
+[connection signal="respawn" from="p_red" to="." method="_on_p_red_respawn"]
