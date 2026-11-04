@@ -11,11 +11,11 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
 signal health_changed(new_health)
+signal green_health_dealt(amount)
 
 func _ready():
 	current_health = max_health
-	take_damage(20)
-	print(current_health)
+
 
 func take_damage(amount: int):
 	current_health -= amount
@@ -28,6 +28,19 @@ func take_damage(amount: int):
 
 
 func _physics_process(delta: float) -> void:
+	
+	#DAMAGE DEALING
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if Input.is_action_just_pressed("charla punch") and collider.name == "p_green":
+			green_health_dealt.emit(3)
+	
+	
+	
+	
+	
+	
 	var direction := Input.get_axis("Left", "Right")
 	# Add the gravity.
 	if not is_on_floor():
