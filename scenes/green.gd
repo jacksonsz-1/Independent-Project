@@ -1,6 +1,5 @@
 extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var p_red: CharacterBody2D = $p_red
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
@@ -10,7 +9,7 @@ var lives: int = 3
 var punching = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
-
+signal respawn()
 signal health_change(new_health)
 signal red_health_dealt(amount)
 
@@ -24,19 +23,9 @@ func take_damage(amount: int):
 	health_change.emit(current_health)
 	
 	if current_health <= 0:
-		die()
+		die2()
 
 func _physics_process(delta: float) -> void:
-	
-	
-	
-	
-			
-		
-		
-		
-	
-	
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
@@ -115,6 +104,6 @@ func _on_p_red_green_health_dealt(amount: Variant) -> void:
 	take_damage(amount)
 
 
-
-func die():
-	pass
+func die2():
+	respawn.emit()
+	
