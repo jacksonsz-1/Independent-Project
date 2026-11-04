@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var walk: CollisionShape2D = $CharlaWalkCollision
 @onready var idle: CollisionShape2D = $CharlaIdleCollision
 @onready var jump: CollisionShape2D = $CharlaJumpCollision
-@onready var punch: CollisionPolygon2D = $CharlaPunchCollision
+@onready var punch: Area2D = $CharlaPunchCollision
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
@@ -30,13 +30,6 @@ func take_damage(amount: int):
 
 func _physics_process(delta: float) -> void:
 	
-	#DAMAGE DEALING
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		if Input.is_action_just_pressed("charla punch") and collider.name == "p_green":
-			green_health_dealt.emit(3)
-	
 	
 	
 	
@@ -55,14 +48,14 @@ func _physics_process(delta: float) -> void:
 		jump.disabled = false
 		idle.disabled = true
 		walk.disabled = true
-		punch.disabled = true
+		$PunchHitbox/CharlaPunchCollision.disabled = true
 		
 	if animated_sprite.frame == 3 and is_on_floor():
 			animated_sprite.play("idle")
 			idle.disabled = false
 			walk.disabled = true
 			jump.disabled = true
-			punch.disabled = true
+			$PunchHitbox/CharlaPunchCollision.disabled = true
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -77,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			walk.disabled = false
 			jump.disabled = true
 			idle.disabled = true
-			punch.disabled = true
+			$PunchHitbox/CharlaPunchCollision.disabled = true
 		
 		
 		
@@ -90,7 +83,7 @@ func _physics_process(delta: float) -> void:
 			idle.disabled = false
 			jump.disabled = true
 			walk.disabled = true
-			punch.disabled = true
+			$PunchHitbox/CharlaPunchCollision.disabled = true
 		
 
 	move_and_slide()
@@ -99,10 +92,10 @@ func _physics_process(delta: float) -> void:
 	## attacks
 	if Input.is_action_just_pressed("charla punch"):
 		animated_sprite.play("punch")
-		idle.disabled = true
+		idle.disabled = false
 		jump.disabled = true
 		walk.disabled = true
-		punch.disabled = false
+		$PunchHitbox/CharlaPunchCollision.disabled = false
 		
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
 		animated_sprite.play("idle")
@@ -112,7 +105,11 @@ func _physics_process(delta: float) -> void:
 	
 #recieving damage
 func _on_p_green_red_health_dealt(amount: Variant) -> void:
-	take_damage(amount)
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if Input.is_action_just_pressed("charla punch") and collider.name == "p_green":
+			green_health_dealt.emit(3)	
 	
 	
 	
