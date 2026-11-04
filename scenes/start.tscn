@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
 [ext_resource type="Script" uid="uid://cjgl818la7d7c" path="res://scenes/red.gd" id="26_8aotp"]
 [ext_resource type="Script" uid="uid://boynvukyad1gr" path="res://scenes/red_health.gd" id="26_d7e6r"]
+[ext_resource type="SpriteFrames" uid="uid://dgrs8l1nuiyi" path="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/flames/flame-arcane-48.tres" id="28_728ow"]
+[ext_resource type="Script" uid="uid://dwuqlox8kgx6r" path="res://scenes/double_damage.gd" id="29_fmdiu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
 animations = [{
@@ -321,6 +323,13 @@ one_way_collision_margin = 128.0
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
+
+[node name="DoubleDamage" type="AnimatedSprite2D" parent="." unique_id=652615408]
+position = Vector2(-261, -109)
+sprite_frames = ExtResource("28_728ow")
+animation = &"flame"
+frame_progress = 0.5954214
+script = ExtResource("29_fmdiu")
 
 [connection signal="health_change" from="p_green" to="CanvasLayer/lindaHealth" method="_on_linda_health_change"]
 [connection signal="red_health_dealt" from="p_green" to="p_red" method="_on_p_green_red_health_dealt"]

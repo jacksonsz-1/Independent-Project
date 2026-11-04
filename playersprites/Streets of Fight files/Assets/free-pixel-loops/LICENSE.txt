@@ -1,0 +1,11 @@
+Free Pixel Loops
+Copyright (c) 2026 cs5475
+
+To the extent possible under law, cs5475 has waived all copyright and
+related or neighboring rights to Free Pixel Loops (the images, JSON
+files and Godot SpriteFrames files in this folder). This work is
+published under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+You can use them in anything, commercial included, and change them as
+you like. No credit needed.

@@ -1,0 +1,112 @@
+{
+  "image": "flame-fire-32.png",
+  "effect": "fire loop",
+  "frame_width": 32,
+  "frame_height": 32,
+  "frame_count": 12,
+  "fps": 12,
+  "loop": true,
+  "columns": 12,
+  "rows": 1,
+  "godot": {
+    "hframes": 12,
+    "vframes": 1
+  },
+  "frames": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 32,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 64,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 96,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 128,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 160,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 192,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 224,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 256,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 288,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 320,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    },
+    {
+      "x": 352,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "duration_ms": 83
+    }
+  ],
+  "palette": [
+    "#1b1a22",
+    "#3b3442",
+    "#6a4a4c",
+    "#a3392d",
+    "#de5a29",
+    "#f29a33",
+    "#f8d35b",
+    "#fff6d5"
+  ],
+  "made_with": "Puff, https://cs5475.itch.io/puff"
+}
