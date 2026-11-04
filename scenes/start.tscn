@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://brbypsay7kl5h" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Punch/punch3.png" id="13_gxmfj"]
 [ext_resource type="Texture2D" uid="uid://cly76nuboym1c" path="res://playersprites/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_cdrmf"]
 [ext_resource type="Script" uid="uid://cjgl818la7d7c" path="res://scenes/red.gd" id="26_8aotp"]
-[ext_resource type="Script" uid="uid://boynvukyad1gr" path="res://scenes/charla_health.gd" id="26_d7e6r"]
+[ext_resource type="Script" uid="uid://boynvukyad1gr" path="res://scenes/red_health.gd" id="26_d7e6r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
 animations = [{
