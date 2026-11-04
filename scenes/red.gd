@@ -45,6 +45,8 @@ func _physics_process(delta: float) -> void:
 	if animated_sprite.frame == 3 and is_on_floor():
 			animated_sprite.play("idle")
 			idle.disabled = false
+			walk.disabled = true
+			jump.disabled = true
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -58,6 +60,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.flip_h = (direction < 0)
 			walk.disabled = false
 			jump.disabled = true
+			idle.disabled = true
 		
 		
 		
