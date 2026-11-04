@@ -173,6 +173,8 @@ func _on_linda_health_change(new_health: Variant) -> void:
 	value = new_health
 "
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4rvc"]
+
 [node name="Node2D" type="Node2D" unique_id=743133876]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983888136]
@@ -328,8 +330,15 @@ position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
 
-[node name="DoubleDamage" type="AnimatedSprite2D" parent="." unique_id=652615408]
-position = Vector2(-261, -109)
+[node name="Area2D" type="Area2D" parent="." unique_id=527790320]
+position = Vector2(-238, -103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1692620347]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_k4rvc")
+
+[node name="DoubleDamage" type="AnimatedSprite2D" parent="Area2D/CollisionShape2D" unique_id=652615408]
+position = Vector2(1, -10)
 sprite_frames = ExtResource("28_728ow")
 animation = &"flame"
 frame_progress = 0.5954214
