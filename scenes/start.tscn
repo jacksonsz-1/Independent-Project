@@ -320,4 +320,5 @@ scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
 
 [connection signal="health_change" from="p_green" to="CanvasLayer/lindaHealth" method="_on_linda_health_change"]
+[connection signal="red_health_dealt" from="p_green" to="p_red" method="_on_p_green_red_health_dealt"]
 [connection signal="health_changed" from="p_red" to="CanvasLayer/charlaHealth" method="_on_charla_health_changed"]

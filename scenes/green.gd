@@ -1,17 +1,18 @@
 extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var charla: CharacterBody2D = $Charla
+@onready var p_red: CharacterBody2D = $p_red
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
-
+var punching = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
 signal health_change(new_health)
+signal red_health_dealt(amount)
 
 
 func _ready():
@@ -26,19 +27,16 @@ func take_damage(amount: int):
 		die()
 
 func _physics_process(delta: float) -> void:
-	var punching := false
+	
 	
 	
 	#damage
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
+		if punching and collider.name == "p_red":
+			red_health_dealt.emit(1)
 		
-		if collider == charla:
-			print("charla")
-			if collider == charla and punching == true:
-				charla.take_damage(3)
-				print(charla.current_health)
 	
 	
 	

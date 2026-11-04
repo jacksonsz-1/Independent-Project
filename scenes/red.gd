@@ -87,5 +87,12 @@ func _physics_process(delta: float) -> void:
 		
 	
 	
+	
+#recieving damage
+func _on_p_green_red_health_dealt(amount: Variant) -> void:
+	take_damage(amount)
+	
+	
+	
 func die():
 	pass
