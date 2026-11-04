@@ -215,7 +215,7 @@ script = ExtResource("26_8aotp")
 modulate = Color(0.9372549, 0, 0, 1)
 position = Vector2(455, 516)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"punch"
+animation = &"hurt"
 
 [node name="CharlaIdleCollision" type="CollisionShape2D" parent="p_red" unique_id=534867811]
 position = Vector2(457, 524)
@@ -231,8 +231,12 @@ position = Vector2(455, 525)
 shape = SubResource("CapsuleShape2D_fmdiu")
 disabled = true
 
-[node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="p_red" unique_id=413019031]
-polygon = PackedVector2Array(470, 520, 492, 520, 492, 509, 475, 509, 472, 504, 460, 504, 461, 517, 443, 542, 447, 550, 467, 550)
+[node name="PunchHitbox" type="Area2D" parent="p_red" unique_id=1977990815]
+collision_layer = 0
+
+[node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="p_red/PunchHitbox" unique_id=413019031]
+polygon = PackedVector2Array(470, 526, 492, 526, 492, 509, 475, 509, 472, 504, 460, 504, 461, 517, 443, 542, 447, 546, 457, 548, 467, 546)
+disabled = true
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)
@@ -326,3 +330,4 @@ texture = SubResource("PlaceholderTexture2D_ctkvv")
 [connection signal="red_health_dealt" from="p_green" to="p_red" method="_on_p_green_red_health_dealt"]
 [connection signal="green_health_dealt" from="p_red" to="p_green" method="_on_p_red_green_health_dealt"]
 [connection signal="health_changed" from="p_red" to="CanvasLayer/charlaHealth" method="_on_charla_health_changed"]
+[connection signal="area_entered" from="p_red/PunchHitbox" to="p_red" method="_on_punch_hitbox_area_entered"]
