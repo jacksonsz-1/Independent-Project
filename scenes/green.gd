@@ -1,6 +1,6 @@
 extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var charla: CharacterBody2D = $Charla
+@onready var charla: CharacterBody2D
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
