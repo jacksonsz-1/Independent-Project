@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
+@onready var punchBox = $punchBox/LindaPunchCollision
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
@@ -23,7 +24,7 @@ func take_damage(amount: int):
 	health_change.emit(current_health)
 	
 	if current_health <= 0:
-		die2()
+		die()
 
 func _physics_process(delta: float) -> void:
 	
@@ -91,23 +92,43 @@ func _physics_process(delta: float) -> void:
 	
 	## attacks
 	if Input.is_action_just_pressed("linda punch"):
-		animated_sprite.play("punch")
+		punches()
 		
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
 		animated_sprite.play("idle")
 		
-	#damage
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		if Input.is_action_just_pressed("linda punch") and collider.name == "p_red":
-			red_health_dealt.emit(3)
-#RECEIVING DAMAGE
-func _on_p_red_green_health_dealt(amount: Variant) -> void:
-	take_damage(amount)
+	#for i in get_slide_collision_count():
+		#var collision = get_slide_collision(i)
+		#var collider = collision.get_collider()
+		#if Input.is_action_just_pressed("charla punch") and collider.name == "p_green":
+			#green_health_dealt.emit(3)	
+	
+	
+#recieving damage
+func _on_p_green_red_health_dealt(amount: Variant) -> void:
+	take_damage(3)
+	
+func punches():
+	# Turn on hitbox
+	animated_sprite.play("punch")
+	idle.disabled = false
+	jump.disabled = true
+	walk.disabled = true
+	$PunchHitbox/LindaPunchCollision.disabled = false
+	
+	await get_tree().physics_frame
 
-
-func die2():
+	# Get all overlapping CHARACTER BODIES
+	var targets = $PunchHitbox.get_overlapping_bodies()
+	
+	for target in targets:
+		# Make sure you don't punch yourself, and the enemy can take damage
+		if target != self and target.has_method("take_damage"):
+			target.take_damage(3)
+			
+	# Turn hitbox back off
+	
+func die():
 	respawn.emit()
 	current_health = 100
 	
