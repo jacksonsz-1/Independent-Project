@@ -63,8 +63,10 @@ func _physics_process(delta: float) -> void:
 		
 		if velocity.x > 0:
 			$AnimatedSprite2D.flip_h = true
+			$PunchHitbox/LindaPunchCollision.scale.x = 1
 		elif velocity.x < 0:
 			$AnimatedSprite2D.flip_h = false
+			$PunchHitbox/LindaPunchCollision.scale.x = -1
 		
 		if is_on_floor and not animated_sprite.animation == "jump" and not animated_sprite.animation == "punch":
 			animated_sprite.play("walk")
