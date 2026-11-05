@@ -213,6 +213,11 @@ position = Vector2(455, 525)
 shape = SubResource("CapsuleShape2D_gxmfj")
 disabled = true
 
+[node name="punchBox" type="Area2D" parent="p_green" unique_id=128188747]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="p_green/punchBox" unique_id=365473757]
+build_mode = 1
+
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
 position = Vector2(-267, 71)
 script = ExtResource("26_8aotp")
