@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var idle: CollisionShape2D = $CharlaIdleCollision
 @onready var jump: CollisionShape2D = $CharlaJumpCollision
 @onready var punch: Area2D = $CharlaPunchCollision
+@onready var punchBox = $PunchHitbox/CharlaPunchCollision
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
@@ -13,9 +14,11 @@ const JUMP_VELOCITY = -500.0
 
 signal health_changed(new_health)
 signal green_health_dealt(amount)
+signal red_punching()
 
 func _ready():
 	current_health = max_health
+	punchBox.disabled = true
 
 
 func take_damage(amount: int):
@@ -87,27 +90,41 @@ func _physics_process(delta: float) -> void:
 	
 	## attacks
 	if Input.is_action_just_pressed("charla punch"):
-		animated_sprite.play("punch")
-		idle.disabled = false
-		jump.disabled = true
-		walk.disabled = true
-		$PunchHitbox/CharlaPunchCollision.disabled = false
+		punches()
 		
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
 		animated_sprite.play("idle")
 		
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		if Input.is_action_just_pressed("charla punch") and collider.name == "p_green":
-			green_health_dealt.emit(3)	
+	#for i in get_slide_collision_count():
+		#var collision = get_slide_collision(i)
+		#var collider = collision.get_collider()
+		#if Input.is_action_just_pressed("charla punch") and collider.name == "p_green":
+			#green_health_dealt.emit(3)	
 	
 	
 #recieving damage
 func _on_p_green_red_health_dealt(amount: Variant) -> void:
 	take_damage(3)
 	
+func punches():
+	# Turn on hitbox
+	animated_sprite.play("punch")
+	idle.disabled = false
+	jump.disabled = true
+	walk.disabled = true
+	$PunchHitbox/CharlaPunchCollision.disabled = false
 	
+	await get_tree().physics_frame
+
+	# Get all overlapping CHARACTER BODIES
+	var targets = $PunchHitbox.get_overlapping_bodies()
+	
+	for target in targets:
+		# Make sure you don't punch yourself, and the enemy can take damage
+		if target != self and target.has_method("take_damage"):
+			target.take_damage(5)
+			
+	# Turn hitbox back off
 	
 func die():
 	respawn.emit()

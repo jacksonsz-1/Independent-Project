@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://cjgl818la7d7c" path="res://scenes/red.gd" id="26_8aotp"]
 [ext_resource type="Script" uid="uid://boynvukyad1gr" path="res://scenes/red_health.gd" id="26_d7e6r"]
 [ext_resource type="SpriteFrames" uid="uid://dgrs8l1nuiyi" path="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/flames/flame-arcane-48.tres" id="28_728ow"]
+[ext_resource type="Script" uid="uid://dyrw8bdeoqrt6" path="res://scenes/punch_hitbox.gd" id="28_gxmfj"]
 [ext_resource type="Script" uid="uid://dwuqlox8kgx6r" path="res://scenes/double_damage.gd" id="29_fmdiu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctkvv"]
@@ -245,9 +246,10 @@ disabled = true
 [node name="PunchHitbox" type="Area2D" parent="p_red" unique_id=1977990815]
 position = Vector2(-451, -523)
 collision_layer = 0
+script = ExtResource("28_gxmfj")
 
 [node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="p_red/PunchHitbox" unique_id=413019031]
-polygon = PackedVector2Array(470, 526, 492, 526, 492, 509, 475, 509, 472, 504, 460, 504, 461, 517, 443, 542, 447, 546, 457, 548, 467, 546)
+polygon = PackedVector2Array(470, 526, 492, 526, 492, 509, 475, 509, 472, 509, 466, 511, 463, 519, 465, 525, 467, 526, 468, 526, 469, 526)
 disabled = true
 
 [node name="redMarker" type="Marker2D" parent="." unique_id=259791175]
