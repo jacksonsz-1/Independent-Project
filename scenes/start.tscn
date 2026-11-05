@@ -188,6 +188,9 @@ texture = ExtResource("1_71xtm")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
 zoom = Vector2(1.7, 1.7)
 
+[node name="greenMarker" type="Marker2D" parent="." unique_id=1711308339]
+position = Vector2(258, 52)
+
 [node name="p_green" type="CharacterBody2D" parent="." unique_id=870461651]
 position = Vector2(-197, -471)
 script = ExtResource("1_b1pjr")

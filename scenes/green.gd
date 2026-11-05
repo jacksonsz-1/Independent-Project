@@ -109,4 +109,5 @@ func _on_p_red_green_health_dealt(amount: Variant) -> void:
 
 func die2():
 	respawn.emit()
+	current_health = 100
 	
