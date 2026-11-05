@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var walk: CollisionShape2D = $LindaWalkCollision
 @onready var idle: CollisionShape2D = $LindaIdleCollision
 @onready var jump: CollisionShape2D = $LindaJumpCollision
-@onready var punchBox = $punchBox/
+@onready var punchBox = $punchBox/LindaPunchCollision
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
@@ -24,7 +24,7 @@ func take_damage(amount: int):
 	health_change.emit(current_health)
 	
 	if current_health <= 0:
-		die2()
+		die()
 
 func _physics_process(delta: float) -> void:
 	
@@ -91,7 +91,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	## attacks
-	if Input.is_action_just_pressed("charla punch"):
+	if Input.is_action_just_pressed("linda punch"):
 		punches()
 		
 	if animated_sprite.animation == "punch" and animated_sprite.frame == 2:
@@ -124,7 +124,7 @@ func punches():
 	for target in targets:
 		# Make sure you don't punch yourself, and the enemy can take damage
 		if target != self and target.has_method("take_damage"):
-			target.take_damage(5)
+			target.take_damage(3)
 			
 	# Turn hitbox back off
 	

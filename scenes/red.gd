@@ -126,10 +126,11 @@ func punches():
 	for target in targets:
 		# Make sure you don't punch yourself, and the enemy can take damage
 		if target != self and target.has_method("take_damage"):
-			target.take_damage(5)
+			target.take_damage(3)
 			
 	# Turn hitbox back off
 	
 func die():
-	respawn.emit()
 	current_health = 100
+	respawn.emit()
+	
