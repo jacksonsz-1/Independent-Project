@@ -194,10 +194,9 @@ script = ExtResource("1_b1pjr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="p_green" unique_id=2031107873]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(455, 516)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"punch"
-frame = 2
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="LindaIdleCollision" type="CollisionShape2D" parent="p_green" unique_id=595809375]
 position = Vector2(457, 524)
@@ -213,10 +212,15 @@ position = Vector2(455, 525)
 shape = SubResource("CapsuleShape2D_gxmfj")
 disabled = true
 
-[node name="punchBox" type="Area2D" parent="p_green" unique_id=128188747]
+[node name="PunchHitbox" type="Area2D" parent="p_green" unique_id=1867210731]
+position = Vector2(-6, -2)
+collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="p_green/punchBox" unique_id=365473757]
-build_mode = 1
+[node name="LindaPunchCollision" type="CollisionPolygon2D" parent="p_green/PunchHitbox" unique_id=1340817417]
+position = Vector2(916, 3)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(470, 526, 492, 526, 492, 509, 475, 509, 472, 504, 460, 504, 461, 517, 443, 542, 447, 546, 457, 548, 467, 546)
+disabled = true
 
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
 position = Vector2(-267, 71)
@@ -226,7 +230,7 @@ script = ExtResource("26_8aotp")
 modulate = Color(0.9372549, 0, 0, 1)
 position = Vector2(4, -7)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
-animation = &"hurt"
+animation = &"idle"
 
 [node name="CharlaIdleCollision" type="CollisionShape2D" parent="p_red" unique_id=534867811]
 position = Vector2(6, 1)

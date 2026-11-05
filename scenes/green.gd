@@ -41,7 +41,6 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		animated_sprite.flip_h = (direction < 0)
 		animated_sprite.play("jump")
 		idle.disabled = true
 		walk.disabled = true
@@ -61,9 +60,13 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		
+		if velocity.x > 0:
+			$AnimatedSprite2D.flip_h = true
+		elif velocity.x < 0:
+			$AnimatedSprite2D.flip_h = false
+		
 		if is_on_floor and not animated_sprite.animation == "jump" and not animated_sprite.animation == "punch":
 			animated_sprite.play("walk")
-			animated_sprite.flip_h = (direction < 0)
 			idle.disabled = true
 			jump.disabled = true
 			walk.disabled = false
