@@ -13,6 +13,7 @@ const JUMP_VELOCITY = -500.0
 signal respawn_g()
 signal health_change(new_health)
 signal red_health_dealt(amount)
+signal newgame()
 
 
 func _ready():
@@ -27,6 +28,9 @@ func take_damage(amount: int):
 		die()
 
 func _physics_process(delta: float) -> void:
+	
+	if global_position.y > 1000:
+		die()
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
@@ -132,6 +136,19 @@ func punches():
 	
 func die():
 	current_health = 100
+	lives -= 1
+	print(current_health)
+	print(lives)
 	respawn_g.emit()
 	
+func lose():
+	current_health = 100
+	lives = 3
+	newgame.emit()
+	get_tree().change_scene_to_file("res://scenes/startscreen.tscn")
 	
+
+
+func _on_p_red_newgame() -> void:
+	lives = 3
+	current_health = 100

@@ -9,6 +9,7 @@ extends CharacterBody2D
 var current_health: int
 var lives: int = 3
 signal respawn_r()
+signal newgame()
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
@@ -32,7 +33,11 @@ func take_damage(amount: int):
 
 
 func _physics_process(delta: float) -> void:
-
+	
+	if global_position.y > 500:
+		die()
+	if lives <= 0:
+		lose()
 	
 	var direction := Input.get_axis("Left", "Right")
 	# Add the gravity.
@@ -135,5 +140,14 @@ func punches():
 	
 func die():
 	current_health = 100
+	lives -= 1
+	print(current_health)
+	print(lives)
 	respawn_r.emit()
+
+func lose():
+	current_health = 100
+	lives = 3
+	newgame.emit()
+	get_tree().change_scene_to_file("res://scenes/startscreen.tscn")
 	
