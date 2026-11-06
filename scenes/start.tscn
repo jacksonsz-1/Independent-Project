@@ -221,9 +221,9 @@ position = Vector2(-6, -2)
 collision_layer = 0
 
 [node name="LindaPunchCollision" type="CollisionPolygon2D" parent="p_green/PunchHitbox" unique_id=78976310]
-position = Vector2(445, -44)
+position = Vector2(462, -77)
 scale = Vector2(-1, 1)
-polygon = PackedVector2Array(-20, 574, -2, 574, -2, 565, -2, 557, -20, 557, -20, 557, -20, 566, -20, 574, -20, 574, -20, 574, -20, 574)
+polygon = PackedVector2Array(3, 604, 40, 604, 40, 587, 3, 587, 3, 587, 3, 604, 3, 604, 3, 604, 3, 604)
 disabled = true
 
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
@@ -255,8 +255,9 @@ position = Vector2(-451, -523)
 collision_layer = 0
 script = ExtResource("28_gxmfj")
 
-[node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="p_red/PunchHitbox" unique_id=413019031]
-polygon = PackedVector2Array(470, 526, 492, 526, 492, 509, 475, 509, 472, 509, 466, 511, 463, 519, 465, 525, 467, 526, 468, 526, 469, 526)
+[node name="CharlaPunchCollision" type="CollisionPolygon2D" parent="p_red/PunchHitbox" unique_id=1094914115]
+position = Vector2(429, -84)
+polygon = PackedVector2Array(28, 607, 65, 607, 65, 590, 28, 590, 28, 590, 28, 607, 28, 607, 28, 607, 28, 607)
 disabled = true
 
 [node name="redMarker" type="Marker2D" parent="." unique_id=259791175]
