@@ -14,9 +14,11 @@ func _ready() -> void:
 
 func _on_p_red_respawn_r():
 	p_red.global_position = marker.global_position
+	p_red.current_health = 100
 
 func _on_p_green_respawn_g():
 	p_green.global_position = marker2.global_position
-	print(p_green.global_position)
+	await get_tree().create_timer(2.0).timeout
+	p_green.current_health = 100
 	
 	
