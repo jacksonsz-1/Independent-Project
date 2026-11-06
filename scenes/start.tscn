@@ -189,32 +189,32 @@ texture = ExtResource("1_71xtm")
 zoom = Vector2(1.7, 1.7)
 
 [node name="p_green" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(254, 48)
+position = Vector2(260, 70)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="p_green" unique_id=2031107873]
 modulate = Color(0, 1, 0, 1)
-position = Vector2(7, 68.5)
+position = Vector2(1, -8.5)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"idle"
 
 [node name="LindaIdleCollision" type="CollisionShape2D" parent="p_green" unique_id=595809375]
-position = Vector2(9, 76.5)
+position = Vector2(3, -0.5)
 shape = SubResource("CapsuleShape2D_8aotp")
 
 [node name="LindaJumpCollision" type="CollisionShape2D" parent="p_green" unique_id=1358300182]
-position = Vector2(2, 73.5)
+position = Vector2(-4, -3.5)
 shape = SubResource("CapsuleShape2D_j7fht")
 disabled = true
 
 [node name="LindaWalkCollision" type="CollisionShape2D" parent="p_green" unique_id=711911841]
-position = Vector2(7, 77.5)
+position = Vector2(1, 0.5)
 shape = SubResource("CapsuleShape2D_gxmfj")
 disabled = true
 
 [node name="PunchHitbox" type="Area2D" parent="p_green" unique_id=1867210731]
-position = Vector2(477, 501)
+position = Vector2(471, 424)
 collision_layer = 0
 
 [node name="LindaPunchCollision" type="CollisionPolygon2D" parent="p_green/PunchHitbox" unique_id=78976310]
