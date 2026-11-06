@@ -229,8 +229,6 @@ position = Vector2(-466, -429)
 scale = Vector2(-1, 1)
 polygon = PackedVector2Array(5, 1, 28.642212, 1.0000305, 40, 1, 40, -15, 5, -15)
 
-[node name="Timer" type="Timer" parent="." unique_id=905972073]
-
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
 position = Vector2(-267, 71)
 script = ExtResource("26_8aotp")

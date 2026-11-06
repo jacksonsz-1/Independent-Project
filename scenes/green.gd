@@ -136,6 +136,7 @@ func punches():
 	
 func die():
 	current_health = 100
+	health_change.emit(current_health)
 	lives -= 1
 	print(current_health)
 	print(lives)
@@ -144,6 +145,7 @@ func die():
 func lose():
 	current_health = 100
 	lives = 3
+	health_change.emit(current_health)
 	newgame.emit()
 	get_tree().change_scene_to_file("res://scenes/startscreen.tscn")
 	
@@ -152,3 +154,4 @@ func lose():
 func _on_p_red_newgame() -> void:
 	lives = 3
 	current_health = 100
+	health_change.emit(current_health)
