@@ -7,15 +7,16 @@ extends Node2D
 
 func _ready() -> void:
 	for p_red in get_tree().get_nodes_in_group("p_red"):
-		p_red.respawned.connect(_on_p_red_respawn.bind(p_red))
+		p_red.respawned.connect(_on_p_red_respawn_r.bind(p_red))
 	for p_green in get_tree().get_nodes_in_group("p_green"):
-		p_red.respawned.connect(_on_p_green_respawn.bind(p_green))
+		p_red.respawned.connect(_on_p_green_respawn_g.bind(p_green))
 	
 
-func _on_p_red_respawn():
+func _on_p_red_respawn_r():
 	p_red.global_position = marker.global_position
 
-func _on_p_green_respawn():
-	p_green.global.position = marker2.global_position
+func _on_p_green_respawn_g():
+	p_green.global_position = marker2.global_position
+	print(p_green.global_position)
 	
 	

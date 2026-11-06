@@ -188,42 +188,39 @@ texture = ExtResource("1_71xtm")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65744056]
 zoom = Vector2(1.7, 1.7)
 
-[node name="greenMarker" type="Marker2D" parent="." unique_id=1711308339]
-position = Vector2(258, 52)
-
 [node name="p_green" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(-197, -471)
+position = Vector2(260, 70)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="p_green" unique_id=2031107873]
 modulate = Color(0, 1, 0, 1)
-position = Vector2(455, 516)
+position = Vector2(1, -8.5)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"idle"
 
 [node name="LindaIdleCollision" type="CollisionShape2D" parent="p_green" unique_id=595809375]
-position = Vector2(457, 524)
+position = Vector2(3, -0.5)
 shape = SubResource("CapsuleShape2D_8aotp")
 
 [node name="LindaJumpCollision" type="CollisionShape2D" parent="p_green" unique_id=1358300182]
-position = Vector2(450, 521)
+position = Vector2(-4, -3.5)
 shape = SubResource("CapsuleShape2D_j7fht")
 disabled = true
 
 [node name="LindaWalkCollision" type="CollisionShape2D" parent="p_green" unique_id=711911841]
-position = Vector2(455, 525)
+position = Vector2(1, 0.5)
 shape = SubResource("CapsuleShape2D_gxmfj")
 disabled = true
 
 [node name="PunchHitbox" type="Area2D" parent="p_green" unique_id=1867210731]
-position = Vector2(-6, -2)
+position = Vector2(471, 424)
 collision_layer = 0
 
 [node name="LindaPunchCollision" type="CollisionPolygon2D" parent="p_green/PunchHitbox" unique_id=78976310]
 position = Vector2(462, -77)
 scale = Vector2(-1, 1)
-polygon = PackedVector2Array(3, 604, 40, 604, 40, 587, 3, 587, 3, 587, 3, 604, 3, 604, 3, 604, 3, 604)
+polygon = PackedVector2Array(890, -374, 908, -374, 908, -383, 908, -391, 890, -391, 890, -391, 890, -382, 890, -374, 890, -374, 890, -374, 890, -374)
 disabled = true
 
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
@@ -262,6 +259,9 @@ disabled = true
 
 [node name="redMarker" type="Marker2D" parent="." unique_id=259791175]
 position = Vector2(-264, 69)
+
+[node name="greenMarker" type="Marker2D" parent="." unique_id=1711308339]
+position = Vector2(258, 17)
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)
@@ -367,6 +367,7 @@ script = ExtResource("29_fmdiu")
 
 [connection signal="health_change" from="p_green" to="CanvasLayer/lindaHealth" method="_on_linda_health_change"]
 [connection signal="red_health_dealt" from="p_green" to="p_red" method="_on_p_green_red_health_dealt"]
+[connection signal="respawn_g" from="p_green" to="." method="_on_p_green_respawn_g"]
 [connection signal="green_health_dealt" from="p_red" to="p_green" method="_on_p_red_green_health_dealt"]
 [connection signal="health_changed" from="p_red" to="CanvasLayer/charlaHealth" method="_on_charla_health_changed"]
-[connection signal="respawn" from="p_red" to="." method="_on_p_red_respawn"]
+[connection signal="respawn_r" from="p_red" to="." method="_on_p_red_respawn_r"]

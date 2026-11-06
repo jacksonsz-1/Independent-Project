@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var max_health: int = 100
 var current_health: int
 var lives: int = 3
-signal respawn()
+signal respawn_r()
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
@@ -135,5 +135,5 @@ func punches():
 	
 func die():
 	current_health = 100
-	respawn.emit()
+	respawn_r.emit()
 	
