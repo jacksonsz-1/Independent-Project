@@ -189,38 +189,38 @@ texture = ExtResource("1_71xtm")
 zoom = Vector2(1.7, 1.7)
 
 [node name="p_green" type="CharacterBody2D" parent="." unique_id=870461651]
-position = Vector2(-197, -471)
+position = Vector2(254, 48)
 script = ExtResource("1_b1pjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="p_green" unique_id=2031107873]
 modulate = Color(0, 1, 0, 1)
-position = Vector2(455, 516)
+position = Vector2(7, 68.5)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_ctkvv")
 animation = &"idle"
 
 [node name="LindaIdleCollision" type="CollisionShape2D" parent="p_green" unique_id=595809375]
-position = Vector2(457, 524)
+position = Vector2(9, 76.5)
 shape = SubResource("CapsuleShape2D_8aotp")
 
 [node name="LindaJumpCollision" type="CollisionShape2D" parent="p_green" unique_id=1358300182]
-position = Vector2(450, 521)
+position = Vector2(2, 73.5)
 shape = SubResource("CapsuleShape2D_j7fht")
 disabled = true
 
 [node name="LindaWalkCollision" type="CollisionShape2D" parent="p_green" unique_id=711911841]
-position = Vector2(455, 525)
+position = Vector2(7, 77.5)
 shape = SubResource("CapsuleShape2D_gxmfj")
 disabled = true
 
 [node name="PunchHitbox" type="Area2D" parent="p_green" unique_id=1867210731]
-position = Vector2(-6, -2)
+position = Vector2(477, 501)
 collision_layer = 0
 
 [node name="LindaPunchCollision" type="CollisionPolygon2D" parent="p_green/PunchHitbox" unique_id=78976310]
 position = Vector2(445, -44)
 scale = Vector2(-1, 1)
-polygon = PackedVector2Array(-20, 574, -2, 574, -2, 565, -2, 557, -20, 557, -20, 557, -20, 566, -20, 574, -20, 574, -20, 574, -20, 574)
+polygon = PackedVector2Array(890, -374, 908, -374, 908, -383, 908, -391, 890, -391, 890, -391, 890, -382, 890, -374, 890, -374, 890, -374, 890, -374)
 disabled = true
 
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
@@ -260,7 +260,7 @@ disabled = true
 position = Vector2(-264, 69)
 
 [node name="greenMarker" type="Marker2D" parent="." unique_id=1711308339]
-position = Vector2(259, 36)
+position = Vector2(258, 17)
 
 [node name="mainPlatform" type="StaticBody2D" parent="." unique_id=1544705176]
 position = Vector2(32, 152)
@@ -366,7 +366,7 @@ script = ExtResource("29_fmdiu")
 
 [connection signal="health_change" from="p_green" to="CanvasLayer/lindaHealth" method="_on_linda_health_change"]
 [connection signal="red_health_dealt" from="p_green" to="p_red" method="_on_p_green_red_health_dealt"]
-[connection signal="respawn" from="p_green" to="." method="_on_p_green_respawn"]
+[connection signal="respawn_g" from="p_green" to="." method="_on_p_green_respawn_g"]
 [connection signal="green_health_dealt" from="p_red" to="p_green" method="_on_p_red_green_health_dealt"]
 [connection signal="health_changed" from="p_red" to="CanvasLayer/charlaHealth" method="_on_charla_health_changed"]
-[connection signal="respawn" from="p_red" to="." method="_on_p_red_respawn"]
+[connection signal="respawn_r" from="p_red" to="." method="_on_p_red_respawn_r"]

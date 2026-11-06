@@ -10,7 +10,7 @@ var lives: int = 3
 var punching = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
-signal respawn()
+signal respawn_g()
 signal health_change(new_health)
 signal red_health_dealt(amount)
 
@@ -131,6 +131,7 @@ func punches():
 	# Turn hitbox back off
 	
 func die():
-	respawn.emit()
 	current_health = 100
+	respawn_g.emit()
+	
 	
