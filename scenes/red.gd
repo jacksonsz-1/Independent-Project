@@ -150,5 +150,6 @@ func lose():
 	lives = 3
 	health_changed.emit(current_health)
 	newgame.emit()
+	print("green player wins uwu~~~~~~")
 	get_tree().change_scene_to_file("res://scenes/startscreen.tscn")
 	
