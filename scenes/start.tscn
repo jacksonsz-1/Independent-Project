@@ -220,7 +220,7 @@ collision_layer = 0
 [node name="LindaPunchCollision" type="CollisionPolygon2D" parent="p_green/PunchHitbox" unique_id=78976310]
 position = Vector2(445, -44)
 scale = Vector2(-1, 1)
-polygon = PackedVector2Array(-1, 572, 21, 572, 21, 555, 4, 555, 1, 555, -5, 557, -8, 565, -6, 571, -4, 572, -3, 572, -2, 572)
+polygon = PackedVector2Array(-20, 574, -2, 574, -2, 565, -2, 557, -20, 557, -20, 557, -20, 566, -20, 574, -20, 574, -20, 574, -20, 574)
 disabled = true
 
 [node name="p_red" type="CharacterBody2D" parent="." unique_id=1568944175]
