@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhsavxmqmr5cu"
-path="res://.godot/imported/aura-arcane-48.png-f89b44338481e814267c331c0cdb18ab.ctex"
+uid="uid://d11qpfqvfco"
+path="res://.godot/imported/flame-fire-32.png-1c42ada93379ed78a7d9fb0830ef1f46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/auras/aura-arcane-48.png"
-dest_files=["res://.godot/imported/aura-arcane-48.png-f89b44338481e814267c331c0cdb18ab.ctex"]
+source_file="res://free-pixel-loops/flames/flame-fire-32.png"
+dest_files=["res://.godot/imported/flame-fire-32.png-1c42ada93379ed78a7d9fb0830ef1f46.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba5f8vaq3ir1s"
-path="res://.godot/imported/aura-frost-48.png-8dae3214fc453067f86b3907f1fb8994.ctex"
+uid="uid://dklsta7gj3fxx"
+path="res://.godot/imported/aura-fire-48.png-ae634156794f2b727e98b76d99b5858e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/auras/aura-frost-48.png"
-dest_files=["res://.godot/imported/aura-frost-48.png-8dae3214fc453067f86b3907f1fb8994.ctex"]
+source_file="res://free-pixel-loops/auras/aura-fire-48.png"
+dest_files=["res://.godot/imported/aura-fire-48.png-ae634156794f2b727e98b76d99b5858e.ctex"]
 
 [params]
 

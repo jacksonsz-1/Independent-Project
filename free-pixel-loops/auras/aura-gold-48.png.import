@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r40jhxb6jw18"
-path="res://.godot/imported/flame-toxic-48.png-eab13202cabe86cdf3fa8b767f070be2.ctex"
+uid="uid://dlu0r4itkhwrw"
+path="res://.godot/imported/aura-gold-48.png-e0e2e41b4f07c82c4d2f1c2a28eb8b03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/flames/flame-toxic-48.png"
-dest_files=["res://.godot/imported/flame-toxic-48.png-eab13202cabe86cdf3fa8b767f070be2.ctex"]
+source_file="res://free-pixel-loops/auras/aura-gold-48.png"
+dest_files=["res://.godot/imported/aura-gold-48.png-e0e2e41b4f07c82c4d2f1c2a28eb8b03.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b34wda4pbmvd7"
-path="res://.godot/imported/steam-48.png-41f266fd00d3e3ad5f42f674d68a0198.ctex"
+uid="uid://dcoikbaxc6itr"
+path="res://.godot/imported/flame-toxic-48.png-7792c0d2b74da517c0f9e0cab3335959.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/smoke/steam-48.png"
-dest_files=["res://.godot/imported/steam-48.png-41f266fd00d3e3ad5f42f674d68a0198.ctex"]
+source_file="res://free-pixel-loops/flames/flame-toxic-48.png"
+dest_files=["res://.godot/imported/flame-toxic-48.png-7792c0d2b74da517c0f9e0cab3335959.ctex"]
 
 [params]
 

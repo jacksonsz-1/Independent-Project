@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d71twd4yjhl3"
-path="res://.godot/imported/aura-toxic-48.png-23305361c17ead738370f32bf6f26ad3.ctex"
+uid="uid://dxr1lqyxu8s7o"
+path="res://.godot/imported/aura-arcane-48.png-3d90df58a425da5dd4f00a0e9e57a724.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/auras/aura-toxic-48.png"
-dest_files=["res://.godot/imported/aura-toxic-48.png-23305361c17ead738370f32bf6f26ad3.ctex"]
+source_file="res://free-pixel-loops/auras/aura-arcane-48.png"
+dest_files=["res://.godot/imported/aura-arcane-48.png-3d90df58a425da5dd4f00a0e9e57a724.ctex"]
 
 [params]
 

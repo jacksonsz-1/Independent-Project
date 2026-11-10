@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dus0t5awf1i13"
-path="res://.godot/imported/aura-gold-48.png-4fbedfd1bfbcecb8d0cd6e5522c3d6e9.ctex"
+uid="uid://ccyu7183wsxbn"
+path="res://.godot/imported/smoke-gray-64.png-2e81079b2925464b95f49cc447bc922c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/auras/aura-gold-48.png"
-dest_files=["res://.godot/imported/aura-gold-48.png-4fbedfd1bfbcecb8d0cd6e5522c3d6e9.ctex"]
+source_file="res://free-pixel-loops/smoke/smoke-gray-64.png"
+dest_files=["res://.godot/imported/smoke-gray-64.png-2e81079b2925464b95f49cc447bc922c.ctex"]
 
 [params]
 

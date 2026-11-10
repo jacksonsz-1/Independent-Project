@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddocxu7i3e764"
-path="res://.godot/imported/smoke-toxic-48.png-75fd99f83c1617c1493c4f29cbe678ae.ctex"
+uid="uid://bjj22ec5bchy0"
+path="res://.godot/imported/smoke-gray-32.png-c898d88cbd2e28d8d17fb3a703815527.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playersprites/Streets of Fight files/Assets/free-pixel-loops/smoke/smoke-toxic-48.png"
-dest_files=["res://.godot/imported/smoke-toxic-48.png-75fd99f83c1617c1493c4f29cbe678ae.ctex"]
+source_file="res://free-pixel-loops/smoke/smoke-gray-32.png"
+dest_files=["res://.godot/imported/smoke-gray-32.png-c898d88cbd2e28d8d17fb3a703815527.ctex"]
 
 [params]
 

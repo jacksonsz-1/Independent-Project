@@ -12,10 +12,20 @@ signal respawn_r()
 signal newgame()
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
+var doubleDamage = 1
 
+
+
+
+#SIGNALS
 signal health_changed(new_health)
 signal green_health_dealt(amount)
 signal red_punching()
+signal double_damage()
+
+
+
+
 
 func _ready():
 	current_health = max_health
@@ -134,7 +144,7 @@ func punches():
 	for target in targets:
 		# Make sure you don't punch yourself, and the enemy can take damage
 		if target != self and target.has_method("take_damage"):
-			target.take_damage(3)
+			target.take_damage(3 * doubleDamage)
 			
 	# Turn hitbox back off
 	
