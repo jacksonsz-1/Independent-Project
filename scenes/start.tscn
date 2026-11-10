@@ -277,6 +277,7 @@ shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform" unique_id=388142278]
+modulate = Color(0.4509804, 0.627451, 0.95686275, 1)
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
@@ -291,6 +292,7 @@ shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform2" unique_id=1536128027]
+modulate = Color(0.4509804, 0.627451, 0.95686275, 1)
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
@@ -329,6 +331,7 @@ shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform3" unique_id=866527013]
+modulate = Color(0.4509804, 0.627451, 0.95686275, 1)
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
@@ -343,6 +346,7 @@ shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform4" unique_id=1209158202]
+modulate = Color(0.4509804, 0.627451, 0.95686275, 1)
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
@@ -357,6 +361,7 @@ shape = SubResource("RectangleShape2D_uj354")
 one_way_collision_margin = 128.0
 
 [node name="Sprite2D" type="Sprite2D" parent="mainPlatform5" unique_id=450613704]
+modulate = Color(0.4509804, 0.627451, 0.95686275, 1)
 position = Vector2(-295.5, 9)
 scale = Vector2(159.00003, 11.999999)
 texture = SubResource("PlaceholderTexture2D_ctkvv")
