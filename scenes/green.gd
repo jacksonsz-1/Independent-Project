@@ -31,6 +31,9 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.y > 1000:
 		die()
+		
+	if lives <= 0:
+		lose()
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
