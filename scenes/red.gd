@@ -144,7 +144,7 @@ func punches():
 	for target in targets:
 		# Make sure you don't punch yourself, and the enemy can take damage
 		if target != self and target.has_method("take_damage"):
-			target.take_damage(3 * doubleDamage)
+			target.take_damage(2 * doubleDamage)
 			
 	# Turn hitbox back off
 	
@@ -163,3 +163,7 @@ func lose():
 	print("green player wins uwu~~~~~~")
 	get_tree().change_scene_to_file("res://scenes/startscreen.tscn")
 	
+
+
+func _on_double_damage_red_double_damage() -> void:
+	doubleDamage = 2

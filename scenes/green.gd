@@ -8,8 +8,10 @@ extends CharacterBody2D
 var current_health: int
 var lives: int = 3
 var punching = false
+var doubleDamage = 1
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
+
 signal respawn_g()
 signal health_change(new_health)
 signal red_health_dealt(amount)
@@ -133,7 +135,7 @@ func punches():
 	for target in targets:
 		# Make sure you don't punch yourself, and the enemy can take damage
 		if target != self and target.has_method("take_damage"):
-			target.take_damage(3)
+			target.take_damage(2 * doubleDamage)
 			
 	# Turn hitbox back off
 	
@@ -159,3 +161,7 @@ func _on_p_red_newgame() -> void:
 	lives = 3
 	current_health = 100
 	health_change.emit(current_health)
+
+
+func _on_double_damage_green_double_damage() -> void:
+	doubleDamage = 2
