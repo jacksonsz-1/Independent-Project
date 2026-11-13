@@ -16,6 +16,7 @@ signal respawn_g()
 signal health_change(new_health)
 signal red_health_dealt(amount)
 signal newgame()
+signal player_died()
 
 
 func _ready():
@@ -146,6 +147,7 @@ func die():
 	print(current_health)
 	print(lives)
 	respawn_g.emit()
+	player_died.emit()
 	
 func lose():
 	current_health = 100

@@ -10,6 +10,7 @@ var current_health: int
 var lives: int = 3
 signal respawn_r()
 signal newgame()
+signal player_died()
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var doubleDamage = 1
@@ -154,6 +155,7 @@ func die():
 	health_changed.emit(current_health)
 	print(lives)
 	respawn_r.emit()
+	player_died.emit()
 
 func lose():
 	current_health = 100

@@ -24,4 +24,3 @@ func _on_p_green_respawn_g():
 	p_green.global_position = marker2.global_position
 	p_green.current_health = 100
 	
-	
