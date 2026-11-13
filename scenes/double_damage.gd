@@ -11,16 +11,25 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		if (follow = true):
-			position.x = player.x
+		if player == "p_red":
+			position.x = $"../p_red".position.x + 2
+			position.y = $"../p_red".position.y + 18
+			
+		if player == "p_green":
+			position.x = $"../p_green".position.x 
+			position.y = $"../p_green".position.y + 18
+			
 
 	
 
 
 func _on_double_damage_area_body_entered(body: Node2D) -> void:
 	if body.name == "p_red":
-		print("p_red touching")
 		play("aura")
-		player = $p_red
+		player = body.name
 		follow = true
-		# Perform your logic here (e.g., body.take_damage())
+
+	if body.name == "p_green":
+		play("aura")
+		player = body.name
+		follow = true
